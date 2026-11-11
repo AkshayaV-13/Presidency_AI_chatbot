@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>UniGuide AI – Your Campus. Your Questions. One Smart Companion.</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#faf9f6",
+            "surface-container-low": "#f4f3f1",
+            "on-secondary-fixed": "#021d35",
+            "primary-fixed": "#dbe1ff",
+            "on-secondary-fixed-variant": "#324863",
+            "inverse-surface": "#2f312f",
+            "surface-dim": "#dbdad7",
+            "on-primary-container": "#838cae",
+            "surface": "#faf9f6",
+            "outline-variant": "#c6c6ce",
+            "primary-fixed-dim": "#bdc5e9",
+            "on-surface-variant": "#45464d",
+            "on-primary-fixed-variant": "#3d4664",
+            "primary-container": "#1c2541",
+            "on-tertiary-fixed": "#00201d",
+            "secondary-fixed-dim": "#b2c8e8",
+            "surface-variant": "#e3e2e0",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#002c28",
+            "inverse-on-surface": "#f2f1ee",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#4a607c",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#239e91",
+            "tertiary-fixed": "#89f5e7",
+            "tertiary": "#001512",
+            "surface-tint": "#545d7c",
+            "secondary-container": "#c8dfff",
+            "on-primary-fixed": "#111a36",
+            "secondary-fixed": "#d2e4ff",
+            "on-background": "#1a1c1a",
+            "surface-container-highest": "#e3e2e0",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "background": "#faf9f6",
+            "surface-container-high": "#e9e8e5",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "on-secondary": "#ffffff",
+            "primary": "#06102b",
+            "on-surface": "#1a1c1a",
+            "on-tertiary-fixed-variant": "#005049",
+            "surface-container": "#efeeeb",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#bdc5e9",
+            "on-secondary-container": "#4c627e",
+            "on-error": "#ffffff",
+            "outline": "#76767e"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "margin-lg": "3rem",
+            "space-xl": "2.5rem",
+            margin: "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "2rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            gutter: "1.5rem",
+            "margin-sm": "1rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="/static/css/custom.css"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed min-h-screen flex flex-col">
+
+  <!-- TOP HEADER & PERSISTENT NAVIGATION -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(28,37,65,0.04)] border-b border-outline-variant/30">
+    <div class="h-20 w-full px-margin-sm lg:px-margin-lg flex items-center justify-between">
+      
+      <!-- Logo & Brand Badge -->
+      <a href="#home" class="flex items-center gap-space-md cursor-pointer text-inherit no-underline" data-path="home">
+        <div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-[0_4px_12px_-2px_rgba(28,37,65,0.12)]">
+          <span class="material-symbols-outlined text-[22px]">account_balance</span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-space-sm">
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">PRESIDENCY AI</span>
+            <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-wider font-semibold">Campus Companion</span>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Office of Student Success &amp; Academic Advising</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav class="hidden md:flex items-center gap-space-sm">
+        <a aria-current="page" class="px-space-md py-2 transition-all bg-primary-container text-on-primary font-title-md text-title-md rounded-lg shadow-sm cursor-pointer" data-path="home" href="#home">Home</a>
+        <a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all cursor-pointer" data-path="campus-services" href="#services">Campus Services</a>
+        <a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all cursor-pointer" data-path="campus-map" href="#map">Campus Map</a>
+      </nav>
+
+      <!-- Right Header Actions (Engine Pill, Ask UniGuide Button, Avatar) -->
+      <div class="flex items-center gap-space-sm sm:gap-space-md">
+        <!-- Live Engine Status Pill -->
+        <div id="engine-status-pill" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+          <span>Connecting...</span>
+        </div>
+
+        <!-- Ask UniGuide Quick Action -->
+        <a class="inline-flex items-center gap-space-sm px-4 py-2.5 rounded-lg bg-gradient-to-r from-tertiary-container via-secondary to-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_14px_rgba(0,44,40,0.2)] hover:opacity-95 transition-opacity cursor-pointer" data-path="ask-uniguide" href="#chat">
+          <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+          <span class="font-bold">Ask UniGuide</span>
+        </a>
+
+        <!-- Profile Avatar -->
+        <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm" title="Student Profile">
+          <span class="material-symbols-outlined text-[19px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="w-full pt-20 flex-1 bg-surface">
+
+    <!-- ================================================================= -->
+    <!-- VIEW 1: HOME PAGE                                                 -->
+    <!-- ================================================================= -->
+    <section id="view-home" class="view-section active w-full relative">
+      
+      <!-- HERO BANNER WITH PROPERLY FITTED PRESIDENCY UNIVERSITY CAMPUS BACKGROUND -->
+      <div class="relative w-full min-h-[580px] md:min-h-[640px] flex items-center justify-center overflow-hidden bg-primary">
+        
+        <!-- Campus Image (Properly fitted, centered on pavilion & fountain, high vibrancy) -->
+        <img src="/static/images/campus_hero_bg.jpg" 
+             alt="Presidency University Campus" 
+             class="absolute inset-0 w-full h-full object-cover object-center filter saturate-[1.12] contrast-[1.04] brightness-[0.92] select-none pointer-events-none"/>
+        
+        <!-- Cinematic dark gradient overlay: allows the architecture and fountain to be clearly visible while keeping text crisp -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#06102B]/80 via-[#06102B]/40 to-[#06102B]/90"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(6,16,43,0.45)_100%)]"></div>
+
+        <!-- Subtle Blueprint Architectural Grid Overlay (Ambient, Non-intrusive) -->
+        <div class="absolute inset-0 pointer-events-none opacity-15 z-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_60%,transparent_100%)]">
+          <svg class="w-full h-full text-[#89f5e7]/40" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern height="64" id="home-arch-blueprint" patternunits="userSpaceOnUse" width="64">
+                <path d="M 64 0 L 0 0 0 64" fill="none" stroke="currentColor" stroke-dasharray="2,4" stroke-width="0.5"></path>
+                <circle cx="64" cy="64" fill="currentColor" opacity="0.4" r="1.5"></circle>
+                <circle cx="0" cy="0" fill="currentColor" opacity="0.4" r="1.5"></circle>
+              </pattern>
+            </defs>
+            <rect fill="url(#home-arch-blueprint)" height="100%" width="100%"></rect>
+          </svg>
+        </div>
+
+        <!-- HERO CONTENT -->
+        <div class="relative z-10 px-margin-sm lg:px-margin-lg py-14 md:py-20 max-w-5xl mx-auto flex flex-col items-center text-center">
+          
+          <!-- Status Micro Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06102B]/70 backdrop-blur-md shadow-lg mb-5 border border-white/25">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#89f5e7] animate-pulse"></span>
+            <span class="font-label-sm text-label-sm text-white tracking-wider uppercase font-bold drop-shadow-sm">Presidency University • Campus Intelligence</span>
+          </div>
+
+          <!-- Main Heading in Crisp White with Drop Shadow for 100% Legibility -->
+          <h1 class="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-white tracking-tight leading-tight mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] font-bold">
+            Your Campus. Your Questions.<br/>
+            <span class="italic font-display-lg text-[#89f5e7] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">One Smart Companion.</span>
+          </h1>
+
+          <!-- Supporting Subtext -->
+          <p class="font-body-lg text-base sm:text-lg text-white/95 max-w-2xl mb-8 leading-relaxed drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+            Find university information, connect with the right department and navigate your campus — all in one place.
+          </p>
+
+          <!-- Prominent AI Search/Chat Omnibox -->
+          <div class="w-full max-w-3xl relative mb-6 group">
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#89f5e7] via-secondary to-[#4A607C] opacity-75 blur-md group-hover:opacity-100 transition-all duration-300"></div>
+            <div class="relative flex items-center bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl p-2 pl-4 border border-white/80">
+              <span class="material-symbols-outlined text-secondary text-[26px] mr-3 select-none">auto_awesome</span>
+              <input aria-label="Ask UniGuide anything about campus" class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 py-2.5" id="uniguide-query-input" placeholder="Ask anything about academics, exams, placements, hostel..." type="text"/>
+              <button class="shrink-0 flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container via-secondary to-primary text-on-primary font-label-lg text-label-lg shadow-md hover:shadow-lg hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer font-bold" id="uniguide-search-btn" type="button">
+                <span>Ask UniGuide</span>
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Suggested Question Chips (Sleek Glassmorphic Pills with high contrast) -->
+          <div class="w-full max-w-3xl flex flex-col items-center">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-white/90 mb-3 font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">Frequently Consulted Topics</span>
+            <div class="flex flex-wrap justify-center gap-2.5">
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="Where can I get a bonafide certificate?" type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">search</span>
+                <span>Where can I get a bonafide certificate?</span>
+              </button>
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="How do I get placement training information?" type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">search</span>
+                <span>How do I get placement training information?</span>
+              </button>
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="Where is the library?" type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">search</span>
+                <span>Where is the library?</span>
+              </button>
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="I have a hostel complaint." type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">search</span>
+                <span>I have a hostel complaint.</span>
+              </button>
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="What is the exact attendance percentage required?" type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">search</span>
+                <span>Attendance requirement</span>
+              </button>
+              <button class="suggested-chip px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white font-label-sm text-label-sm shadow-md hover:shadow-lg border border-white/25 hover:border-white/50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer group" data-query="I need a certificate and want to know where the library is." type="button">
+                <span class="material-symbols-outlined text-[15px] text-[#89f5e7] group-hover:translate-x-0.5 transition-transform">merge_type</span>
+                <span>Compound Query (Certificate + Library)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Photo Attribution Pill -->
+          <div class="mt-8 flex items-center gap-2 px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white/70 text-xs">
+            <span class="material-symbols-outlined text-[14px] text-[#89f5e7]">photo_camera</span>
+            <span>Presidency University Campus Pavilion &amp; Central Grounds</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="relative w-full z-10">
+
+
+        <!-- EXPLORE CAMPUS SERVICES SECTION -->
+        <section class="relative z-10 px-margin-sm lg:px-margin-lg py-12 max-w-6xl mx-auto w-full">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-3 border-b border-outline-variant/20">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Comprehensive Directory</span>
+              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">Explore Campus Services</h2>
+            </div>
+            <a href="#services" data-path="campus-services" class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-secondary hover:text-primary font-semibold transition-colors mt-2 md:mt-0">
+              <span>View Full Directory (6 Wings)</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- 3x2 Service Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            
+            <!-- 1. Academics -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-primary"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">school</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Academics</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">A Block</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Faculty advisors, academic curriculum assistance, and student advisement.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('How do I contact my faculty advisor for academic assistance?')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('a-block')">View A Block</button>
+              </div>
+            </div>
+
+            <!-- 2. Examinations -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-blue-600"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-blue-700 flex items-center justify-center mb-4 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">assignment</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Examinations</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">C Block</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Timetables and official exam notifications published through official channels.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('When will the exam timetable be released?')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('c-block')">View C Block</button>
+              </div>
+            </div>
+
+            <!-- 3. Placements -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-emerald-600"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-emerald-700 flex items-center justify-center mb-4 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">work</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Placements</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">L Block</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Placement Department, training schedules, recruitment and corporate relations.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('I want placement training information.')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('l-block')">View L Block</button>
+              </div>
+            </div>
+
+            <!-- 4. Library -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-amber-600"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-amber-700 flex items-center justify-center mb-4 group-hover:bg-amber-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">menu_book</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Library</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">B Block</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Access library resources in accordance with library timings and regulations.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('Where is the library and can I borrow a book?')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('b-block')">View B Block</button>
+              </div>
+            </div>
+
+            <!-- 5. Hostel -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-purple-600"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-purple-700 flex items-center justify-center mb-4 group-hover:bg-purple-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">apartment</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Hostel</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">Hostel Zone</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Submit hostel complaints and residential grievances to Hostel Administration.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('I have a hostel complaint.')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('hostel-zone')">View Hostel Zone</button>
+              </div>
+            </div>
+
+            <!-- 6. Administration -->
+            <div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-outline-variant/20">
+              <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-on-tertiary-container"></div>
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-surface-container-low text-on-tertiary-container flex items-center justify-center mb-4 group-hover:bg-on-tertiary-container group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">corporate_fare</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-headline-sm text-headline-sm text-primary">Administration</h3>
+                  <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">D Block</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  Certificates, student records, registrar window, and official attestations.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-outline-variant/10">
+                <button class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary group-hover:text-secondary font-semibold transition-colors cursor-pointer" onclick="openServiceInChat('How can I get a bonafide certificate?')">
+                  <span>Ask UniGuide</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button class="text-xs text-secondary hover:text-primary font-semibold cursor-pointer" onclick="openBuildingOnMap('d-block')">View D Block</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- MAP TEASER CALLOUT BANNER -->
+        <section class="relative z-10 px-margin-sm lg:px-margin-lg pb-16 max-w-6xl mx-auto w-full">
+          <div class="rounded-2xl bg-gradient-to-r from-primary-container via-primary to-secondary p-space-lg md:p-space-xl text-on-primary shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+            <div class="flex flex-col max-w-xl">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/15 text-tertiary-fixed font-label-sm text-label-sm w-fit mb-3">
+                <span class="material-symbols-outlined text-[15px]">explore</span>
+                <span>Interactive Demonstration Map</span>
+              </span>
+              <h3 class="font-headline-md text-headline-md text-white mb-2">Need to Find an Office on Campus?</h3>
+              <p class="font-body-md text-body-md text-secondary-fixed leading-relaxed">
+                Explore the interactive schematic campus map featuring walking paths from South Gate, clickable building markers, and destination details.
+              </p>
+            </div>
+            <a href="#map" data-path="campus-map" class="shrink-0 px-space-lg py-3.5 rounded-xl bg-surface-container-lowest text-primary font-title-md text-title-md font-bold shadow-lg hover:bg-surface-container-high transition-all flex items-center gap-2 cursor-pointer">
+              <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">map</span>
+              <span>Launch Campus Map</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- VIEW 2: AI CHAT (ASK UNIGUIDE CONCIERGE)                           -->
+    <!-- ================================================================= -->
+    <section id="view-chat" class="view-section w-full">
+      <div class="relative w-full max-w-5xl mx-auto px-margin-sm lg:px-margin flex flex-col gap-space-lg pb-space-xl pt-4">
+        
+        <!-- Top Utility & State Ribbon -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-md pb-space-sm border-b border-outline-variant/20">
+          <div class="flex items-center gap-space-md">
+            <div class="relative flex items-center justify-center">
+              <div class="w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim"></div>
+              <div class="w-3.5 h-3.5 rounded-full bg-tertiary-fixed animate-ping absolute"></div>
+            </div>
+            <div>
+              <div class="flex items-center gap-space-sm">
+                <h1 class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">UniGuide AI Concierge</h1>
+                <span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-semibold">Fall 2025 Live</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+                <span class="material-symbols-outlined text-[15px] text-on-tertiary-container">verified</span>
+                Verified university knowledge base with smart department detection &amp; demo wayfinding
+              </p>
+            </div>
+          </div>
+
+          <!-- Action Utilities -->
+          <div class="flex items-center gap-space-sm shrink-0">
+            <button class="h-10 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-1.5 shadow-sm border border-outline-variant/20 cursor-pointer" onclick="clearConversation()" title="Clear active conversation logs">
+              <span class="material-symbols-outlined text-[18px]">history</span>
+              <span>Clear History</span>
+            </button>
+            <button class="h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="startNewSession()">
+              <span class="material-symbols-outlined text-[18px]">add_comment</span>
+              <span>Start New Chat</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Conversational Stream Container -->
+        <div class="w-full flex flex-col items-center">
+          <div class="w-full flex flex-col gap-space-lg" id="chat-stream-container">
+            
+            <!-- Welcome Bot Message -->
+            <article class="flex items-start gap-space-md max-w-3xl animate-fadeIn">
+              <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm mt-1">
+                <span class="material-symbols-outlined text-[22px]">smart_toy</span>
+              </div>
+              <div class="flex-1 flex flex-col gap-space-xs">
+                <div class="flex items-center gap-space-sm mb-1">
+                  <span class="font-title-md text-title-md text-primary font-bold">UniGuide AI</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Active</span>
+                </div>
+                <div class="p-space-lg rounded-2xl rounded-tl-sm bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(28,37,65,0.04)] text-on-surface flex flex-col gap-space-sm border border-outline-variant/30">
+                  <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                    Hello! I'm <strong class="font-title-md text-primary">UniGuide</strong>, your AI campus companion. Ask me anything about university departments, office locations, certificates, hostel procedures, or exam notices.
+                  </p>
+                  <div class="flex flex-wrap items-center gap-2 pt-1">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Try asking:</span>
+                    <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-secondary-container hover:text-on-secondary-container transition-colors cursor-pointer" onclick="handleSuggestion('Where can I get a bonafide certificate?')">Bonafide Certificate</button>
+                    <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-secondary-container hover:text-on-secondary-container transition-colors cursor-pointer" onclick="handleSuggestion('How do I get placement training information?')">Placement Training</button>
+                    <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-secondary-container hover:text-on-secondary-container transition-colors cursor-pointer" onclick="handleSuggestion('Where is the library?')">Library Location</button>
+                    <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-secondary-container hover:text-on-secondary-container transition-colors cursor-pointer" onclick="handleSuggestion('What is the exact attendance percentage required?')">Attendance Requirement</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Sticky Chat Prompt Input Omnibox -->
+        <div class="w-full max-w-4xl mx-auto pt-space-md sticky bottom-4 z-40">
+          <div class="p-2 sm:p-2.5 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_20px_48px_-8px_rgba(28,37,65,0.14)] border border-outline-variant/30">
+            <form id="chat-input-form" class="flex items-center gap-space-xs sm:gap-space-sm" onsubmit="event.preventDefault();">
+              <button class="w-10 h-10 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container flex items-center justify-center transition-colors shrink-0" title="Voice Input" type="button" id="voice-query-btn">
+                <span class="material-symbols-outlined text-[20px]">mic</span>
+              </button>
+              <input class="flex-1 min-w-0 bg-transparent py-3 px-space-sm font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="chat-input-field" placeholder="Ask a question about academics, offices, exams, hostel..." type="text" autocomplete="off"/>
+              <button class="h-11 px-space-lg rounded-xl bg-gradient-to-r from-tertiary-container via-secondary to-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_16px_rgba(0,44,40,0.25)] hover:opacity-95 hover:shadow-[0_6px_20px_rgba(0,44,40,0.3)] transition-all flex items-center gap-2 shrink-0 cursor-pointer" type="submit">
+                <span class="hidden sm:inline font-bold">Send Query</span>
+                <span class="material-symbols-outlined text-[19px]">send</span>
+              </button>
+            </form>
+          </div>
+          <div class="mt-2 text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center justify-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-outline">verified</span>
+              UniGuide AI answers are strictly based on verified university information. No invented policies or dates.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- VIEW 3: CAMPUS SERVICES DIRECTORY                                 -->
+    <!-- ================================================================= -->
+    <section id="view-services" class="view-section w-full">
+      
+      <!-- Live Campus Advisory Ribbon -->
+      <div class="w-full bg-primary text-on-primary px-margin-sm lg:px-margin-lg py-2.5 flex items-center justify-between shadow-sm">
+        <div class="flex items-center gap-space-sm min-w-0">
+          <span class="relative flex h-2.5 w-2.5 shrink-0">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-fixed"></span>
+          </span>
+          <p class="font-label-md text-label-md truncate">
+            <strong class="font-semibold text-tertiary-fixed">Live Window Alert:</strong> Fall 2025 Certificate Services &amp; Transcript Submissions operating at regular hours today.
+          </p>
+        </div>
+        <div class="hidden sm:flex items-center gap-space-md shrink-0">
+          <span class="font-label-sm text-label-sm text-on-primary-container">Collegiate Queue Index: Normal (&lt;8 min)</span>
+          <span class="text-tertiary-fixed-dim/60 font-body-sm text-body-sm">•</span>
+          <span class="font-label-sm text-label-sm text-primary-fixed">Campus Node Active</span>
+        </div>
+      </div>
+
+      <div class="w-full px-margin-sm lg:px-margin-lg py-space-xl max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Collegiate Ecosystem Directory</span>
+            </div>
+            <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-space-sm">
+              Campus Services &amp; Department Desks
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Browse official university wings, find assigned service windows, and ask UniGuide AI for immediate self-service guidance.
+            </p>
+          </div>
+
+          <!-- Micro Stats -->
+          <div class="flex items-center gap-space-md bg-surface-container-low px-space-lg py-space-md rounded-xl shadow-sm border border-outline-variant/20">
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">6</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Core Wings</span>
+            </div>
+            <div class="w-px h-8 bg-surface-container-highest"></div>
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-on-tertiary-container font-bold">24/7</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">AI Support</span>
+            </div>
+            <div class="w-px h-8 bg-surface-container-highest"></div>
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">100%</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Verified Info</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="w-full bg-surface-container-lowest rounded-2xl shadow-sm p-space-md mb-space-xl border border-outline-variant/30">
+          <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+            <!-- Search Input -->
+            <div class="relative flex-1">
+              <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">search</span>
+              <input class="w-full pl-11 pr-10 py-3 rounded-xl bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all border border-outline-variant/20" id="department-search" placeholder="Filter departments or services (e.g. bonafide, library, exams, hostel)..." type="text"/>
+              <button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary cursor-pointer" id="clear-search-btn">
+                <span class="material-symbols-outlined text-[18px]">cancel</span>
+              </button>
+            </div>
+            <!-- Category Filter Chips -->
+            <div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0 shrink-0">
+              <button class="filter-chip active-filter px-4 py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary transition-all flex items-center gap-1.5 shadow-sm cursor-pointer" data-category="all">
+                <span>All Services</span>
+                <span class="cat-dot w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+              </button>
+              <button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all cursor-pointer" data-category="academics">
+                Academic Affairs
+              </button>
+              <button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all cursor-pointer" data-category="student-life">
+                Student Life
+              </button>
+              <button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all cursor-pointer" data-category="facilities">
+                Facilities
+              </button>
+              <button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all cursor-pointer" data-category="career">
+                Career
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Interactive Service Directory Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          
+          <!-- Academics -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="academics">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-primary"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">school</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">A Block</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Academics</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Students may contact their faculty advisor for academic-related assistance and curriculum guidance.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Faculty Advising</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Course Guidance</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Attendance Regulations</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('I need help with my academic subjects and faculty advisor.')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('a-block')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+          <!-- Library -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="facilities">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-amber-500"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">menu_book</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-semibold">B Block</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Central Library</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Students can access library resources according to library timings and official borrowing regulations.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Book Borrowing</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Study Carrels</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Digital Archive</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('Where is the library and how can I borrow books?')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('b-block')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+          <!-- Examinations -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="academics">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-blue-600"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">assignment</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-semibold">C Block</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Examination Office</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Timetables and notifications are published exclusively through official university communication channels.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Official Timetables</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Exam Notifications</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Hall Verification</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('When will the exam timetable be released?')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('c-block')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+          <!-- Administration -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="all">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-on-tertiary-container"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-teal-50 text-on-tertiary-container flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">corporate_fare</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">D Block</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Administrative Office</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Students should contact the respective administrative office for certificates and student records.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Bonafide Certificates</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Student Records</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Registrar Counter</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('Where can I get a bonafide certificate?')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('d-block')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+          <!-- Placements -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="career">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-emerald-600"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">work</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-semibold">L Block</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Placement Department</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Students should contact the Placement Department for training and placement-related information.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Placement Training</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Recruitment Drives</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Corporate Relations</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('How do I get placement training information?')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('l-block')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+          <!-- Hostel -->
+          <div class="service-directory-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 relative" data-service-category="student-life">
+            <div class="absolute top-0 left-0 w-1.5 h-full rounded-l-xl bg-purple-600"></div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[24px]">apartment</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 font-semibold">Hostel Zone</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Hostel Administration</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Hostel-related complaints should be submitted directly to Hostel Administration.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Hostel Complaints</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Warden Office</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container text-xs text-on-surface">Room Maintenance</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/20">
+              <button class="flex-1 py-2 px-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm text-center transition-colors cursor-pointer" onclick="openServiceInChat('I have a hostel complaint.')">
+                Ask UniGuide
+              </button>
+              <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors cursor-pointer" onclick="openBuildingOnMap('hostel-zone')">
+                View on Map
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- VIEW 4: CAMPUS MAP (SMART CAMPUS NAVIGATION)                      -->
+    <!-- ================================================================= -->
+    <section id="view-map" class="view-section w-full">
+      
+      <!-- Prominent Demo Disclaimer Ribbon -->
+      <div class="w-full bg-primary-container text-on-primary py-2.5 px-margin-sm lg:px-margin-lg shadow-sm border-b border-primary">
+        <div class="w-full max-w-7xl mx-auto flex items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-sm min-w-0">
+            <span class="material-symbols-outlined text-[18px] text-tertiary-fixed shrink-0">info</span>
+            <p class="font-label-md text-label-md text-primary-fixed truncate">
+              <span class="font-bold text-on-primary">Illustrative Demo Campus Map</span> — Fictional university layout for demonstration purposes, not an official GIS survey.
+            </p>
+          </div>
+          <div class="hidden md:flex items-center gap-space-md shrink-0">
+            <span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+              Wayfinding Navigation Active
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Split Workspace (4-Col Dossier vs 8-Col Map Canvas) -->
+      <div class="w-full max-w-7xl mx-auto px-margin-sm lg:px-margin-lg py-space-md">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+          
+          <!-- LEFT PANEL: Navigation Controls, Active Office Dossier & Directory -->
+          <div class="lg:col-span-4 flex flex-col gap-space-md">
+            
+            <!-- Search Bar -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30">
+              <label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1.5 font-bold">Campus Locator &amp; Wayfinding</label>
+              <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-3.5 text-secondary text-[20px]">search</span>
+                <input class="w-full h-11 pl-11 pr-12 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-on-tertiary-container transition-all border border-outline-variant/20" id="map-search-input" placeholder="Search for an office, building, or service..." type="text"/>
+                <button class="absolute right-2 px-2 py-1 text-xs font-semibold rounded bg-surface-container hover:bg-surface-container-high text-primary cursor-pointer" id="map-search-btn">Find</button>
+              </div>
+              <div class="flex items-center justify-between mt-2 pt-2 border-t border-outline-variant/10">
+                <span class="font-label-sm text-label-sm text-on-surface-variant">South Gate (Main Entrance) Route</span>
+                <span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">turn_sharp_right</span>Active Path
+                </span>
+              </div>
+            </div>
+
+            <!-- ACTIVE DESTINATION DOSSIER CARD -->
+            <div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-md overflow-hidden border border-outline-variant/30">
+              <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-on-tertiary-container to-secondary"></div>
+              
+              <div class="flex items-start justify-between gap-space-sm mb-space-sm pl-1">
+                <div class="flex flex-col">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit mb-1.5 font-bold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-ping"></span>
+                    Selected Destination
+                  </span>
+                  <h2 class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold" id="dest-panel-name">D Block – Administrative Office</h2>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+                  <span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+                </div>
+              </div>
+
+              <!-- Room & Level Specs -->
+              <div class="grid grid-cols-2 gap-space-sm my-space-sm bg-surface-container-low p-space-sm rounded-lg pl-3 border border-outline-variant/20">
+                <div>
+                  <span class="block font-label-sm text-label-sm text-on-surface-variant font-semibold">Primary Room</span>
+                  <span class="font-title-md text-title-md text-primary font-bold" id="dest-panel-room">Room D-104</span>
+                </div>
+                <div>
+                  <span class="block font-label-sm text-label-sm text-on-surface-variant font-semibold">Level</span>
+                  <span class="font-title-md text-title-md text-primary font-bold" id="dest-panel-level">1st Floor (East Wing)</span>
+                </div>
+              </div>
+
+              <!-- Offices Housed -->
+              <div class="mb-space-md pl-1">
+                <span class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 font-bold">Services &amp; Counters Housed</span>
+                <div class="flex flex-wrap gap-1.5" id="dest-panel-services">
+                  <span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Bonafide Certificates</span>
+                  <span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Student Records</span>
+                  <span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Registrar Counter</span>
+                </div>
+              </div>
+
+              <!-- Route Breakdown Visual Card -->
+              <div class="bg-surface-container-high/60 rounded-xl p-space-md mb-space-lg pl-3 border border-outline-variant/20">
+                <div class="flex items-center gap-space-xs text-primary mb-1.5 font-bold">
+                  <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">directions_walk</span>
+                  <span class="font-title-md text-title-md">Walking Route Summary</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface leading-relaxed mb-2.5" id="dest-panel-route-summary">
+                  From <strong class="text-primary font-semibold">Main Entrance (South Gate)</strong> → Walk straight past Central Fountain → <strong class="text-primary font-semibold">D Block</strong> is directly on your right.
+                </p>
+                <div class="flex items-center gap-space-md pt-2 border-t border-outline-variant/30 text-on-surface-variant">
+                  <div class="flex items-center gap-1 font-label-sm text-label-sm">
+                    <span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+                    <span id="dest-panel-time">Approx. 4 mins walk</span>
+                  </div>
+                  <span class="text-outline-variant">•</span>
+                  <div class="flex items-center gap-1 font-label-sm text-label-sm">
+                    <span class="material-symbols-outlined text-[16px] text-secondary">straighten</span>
+                    <span id="dest-panel-distance">280 meters</span>
+                  </div>
+                  <span class="text-outline-variant">•</span>
+                  <div class="flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container font-semibold">
+                    <span class="material-symbols-outlined text-[16px]">accessible_forward</span>
+                    <span>Step-free</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-space-sm pl-1">
+                <button class="flex-1 h-11 px-space-md bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm cursor-pointer" id="start-walk-btn" onclick="simulateWalkingDirections()">
+                  <span class="material-symbols-outlined text-[18px]">turn_sharp_right</span>
+                  <span>Start Walking Directions</span>
+                </button>
+                <button class="h-11 px-space-md bg-gradient-to-r from-tertiary-container to-secondary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:opacity-95 transition-opacity shadow-sm cursor-pointer" onclick="openServiceInChat('Tell me about the offices and procedures in ' + state.selectedBuildingId)">
+                  <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                  <span>Ask UniGuide</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Campus Directory Quick Selector -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-outline-variant/30">
+              <div class="flex items-center justify-between mb-space-sm">
+                <h3 class="font-title-md text-title-md text-primary font-bold">Campus Directory Quick Selector</h3>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">6 Primary Zones</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                
+                <!-- A Block -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left hover:bg-surface-container transition-all group cursor-pointer" data-building-id="a-block">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md flex items-center justify-center font-bold">A</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary block leading-tight font-bold">A Block</span>
+                        <span class="active-view-badge hidden px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Academic Office &amp; Faculty Advisors</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-outline group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </button>
+
+                <!-- B Block -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left hover:bg-surface-container transition-all group cursor-pointer" data-building-id="b-block">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-amber-100 text-amber-900 font-title-md text-title-md flex items-center justify-center font-bold">B</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary block leading-tight font-bold">B Block</span>
+                        <span class="active-view-badge hidden px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">University Central Library</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-outline group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </button>
+
+                <!-- C Block -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left hover:bg-surface-container transition-all group cursor-pointer" data-building-id="c-block">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-blue-100 text-blue-900 font-title-md text-title-md flex items-center justify-center font-bold">C</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary block leading-tight font-bold">C Block</span>
+                        <span class="active-view-badge hidden px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Examination Office</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-outline group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </button>
+
+                <!-- D Block -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left bg-surface-container-high shadow-inner cursor-pointer" data-building-id="d-block">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center font-bold shadow-sm">D</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary font-bold">D Block</span>
+                        <span class="active-view-badge px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-primary font-medium block">Administrative Office</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-on-tertiary-container text-[20px]">pin_drop</span>
+                </button>
+
+                <!-- L Block -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left hover:bg-surface-container transition-all group cursor-pointer" data-building-id="l-block">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-emerald-100 text-emerald-900 font-title-md text-title-md flex items-center justify-center font-bold">L</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary block leading-tight font-bold">L Block</span>
+                        <span class="active-view-badge hidden px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Placement Office</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-outline group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </button>
+
+                <!-- Hostel Zone -->
+                <button class="building-selector-btn w-full p-2.5 rounded-lg flex items-center justify-between text-left hover:bg-surface-container transition-all group cursor-pointer" data-building-id="hostel-zone">
+                  <div class="flex items-center gap-space-sm">
+                    <div class="w-7 h-7 rounded bg-purple-100 text-purple-900 font-title-md text-title-md flex items-center justify-center font-bold">H</div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="font-label-lg text-label-lg text-primary block leading-tight font-bold">Hostel Zone</span>
+                        <span class="active-view-badge hidden px-1.5 py-0.2 rounded text-[10px] font-bold bg-on-tertiary-container text-white">ACTIVE</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Hostel Administration</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined selector-icon text-outline group-hover:text-primary transition-colors text-[20px]">chevron_right</span>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT MAIN PANEL: Bespoke Architectural Vector Campus Map Canvas -->
+          <div class="lg:col-span-8 flex flex-col gap-space-md">
+            
+            <div class="relative w-full bg-surface-container-lowest rounded-2xl shadow-lg overflow-hidden border border-outline-variant/30">
+              
+              <!-- Top Canvas Toolbar -->
+              <div class="absolute top-4 left-4 z-20 flex flex-wrap items-center gap-2 bg-surface/90 backdrop-blur-md px-3 py-2 rounded-xl shadow-md border border-outline-variant/30">
+                <span class="flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold">
+                  <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">map</span>
+                  <span>Central Quadrangle Sector</span>
+                </span>
+                <span class="text-outline-variant">|</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Ground Floor Schematic</span>
+                <div class="flex items-center gap-1 ml-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Elevator Access Available</span>
+                </div>
+              </div>
+
+              <!-- Map Floating Controls -->
+              <div class="absolute top-4 right-4 z-20 flex flex-col gap-2">
+                <!-- Compass Rose -->
+                <div class="w-10 h-10 rounded-xl bg-surface/90 backdrop-blur-md shadow-md flex items-center justify-center text-primary font-title-md text-title-md select-none border border-outline-variant/30" title="Orientation: North Up">
+                  <div class="flex flex-col items-center">
+                    <span class="material-symbols-outlined text-[18px] text-error -mb-1">north</span>
+                    <span class="text-[10px] font-bold leading-none">N</span>
+                  </div>
+                </div>
+                <!-- Zoom & View Tools -->
+                <div class="flex flex-col bg-surface/90 backdrop-blur-md rounded-xl shadow-md overflow-hidden border border-outline-variant/30">
+                  <button id="map-zoom-in" class="w-10 h-10 flex items-center justify-center hover:bg-surface-container text-primary transition-colors cursor-pointer" title="Zoom In">
+                    <span class="material-symbols-outlined text-[20px]">add</span>
+                  </button>
+                  <div class="h-[1px] w-full bg-outline-variant/30"></div>
+                  <button id="map-zoom-out" class="w-10 h-10 flex items-center justify-center hover:bg-surface-container text-primary transition-colors cursor-pointer" title="Zoom Out">
+                    <span class="material-symbols-outlined text-[20px]">remove</span>
+                  </button>
+                  <div class="h-[1px] w-full bg-outline-variant/30"></div>
+                  <button id="map-zoom-reset" class="w-10 h-10 flex items-center justify-center hover:bg-surface-container text-primary transition-colors cursor-pointer" title="Reset View">
+                    <span class="material-symbols-outlined text-[18px]">center_focus_strong</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Bottom Map Legend Bar -->
+              <div class="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-space-sm bg-surface/90 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-md border border-outline-variant/30">
+                <div class="flex flex-wrap items-center gap-space-md">
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-primary-container"></span>
+                    <span>Admin (D)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-secondary-fixed"></span>
+                    <span>Academic (A)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-amber-200"></span>
+                    <span>Library (B)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-blue-200"></span>
+                    <span>Exam (C)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-emerald-200"></span>
+                    <span>Placement (L)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+                    <span class="w-3.5 h-3.5 rounded bg-purple-200"></span>
+                    <span>Hostels</span>
+                  </div>
+                </div>
+                <!-- Route Legend -->
+                <div class="flex items-center gap-2 font-label-sm text-label-sm text-primary font-semibold" id="active-route-legend-label">
+                  <svg class="shrink-0" height="6" viewbox="0 0 24 6" width="24">
+                    <line stroke="#239e91" stroke-dasharray="4,3" stroke-width="3" x1="0" x2="24" y1="3" y2="3"></line>
+                  </svg>
+                  <span>Current Route (280m • Step-free)</span>
+                </div>
+              </div>
+
+              <!-- 2D ARCHITECTURAL VECTOR SCHEMATIC MAP (SVG) -->
+              <div class="w-full h-[640px] bg-[#f8f9fa] relative overflow-hidden select-none">
+                <svg id="campus-svg-canvas" aria-label="Interactive Map of University Campus with schematic building locations and walking paths" class="w-full h-full object-cover" viewbox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Fine Blueprint Background Grid -->
+                    <pattern height="40" id="campusGrid" patternunits="userSpaceOnUse" width="40">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3A506B" stroke-opacity="0.08" stroke-width="0.5"></path>
+                      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#3A506B" stroke-opacity="0.12" stroke-width="1"></path>
+                    </pattern>
+                    <!-- Lawn Texture Pattern -->
+                    <pattern height="20" id="lawnTexture" patternunits="userSpaceOnUse" width="20">
+                      <rect fill="#e8f5e9" height="20" width="20"></rect>
+                      <circle cx="10" cy="10" fill="#c8e6c9" r="1.5"></circle>
+                    </pattern>
+                    <!-- Soft Drop Shadow for Buildings -->
+                    <filter height="130%" id="buildingShadow" width="130%" x="-10%" y="-10%">
+                      <fedropshadow dx="3" dy="5" flood-color="#1c2541" flood-opacity="0.12" stddeviation="4"></fedropshadow>
+                    </filter>
+                    <!-- Prominent Glow Shadow for Selected Building -->
+                    <filter height="150%" id="activeBuildingGlow" width="150%" x="-20%" y="-20%">
+                      <fedropshadow dx="0" dy="8" flood-color="#239e91" flood-opacity="0.4" stddeviation="10"></fedropshadow>
+                      <fedropshadow dx="0" dy="2" flood-color="#06102b" flood-opacity="0.25" stddeviation="4"></fedropshadow>
+                    </filter>
+                  </defs>
+
+                  <!-- Master Canvas Background & Grid -->
+                  <rect fill="#faf9f6" height="700" width="1000"></rect>
+                  <rect fill="url(#campusGrid)" height="700" width="1000"></rect>
+
+                  <!-- Campus Green Lawns / Landscaping Quad -->
+                  <g id="landscaped-lawns">
+                    <!-- North Lawn -->
+                    <rect fill="url(#lawnTexture)" height="80" rx="14" stroke="#c8e6c9" stroke-width="1.5" width="520" x="240" y="70"></rect>
+                    <text fill="#2e7d32" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle" x="500" y="115">NORTH CONCOURSE &amp; ARBORETUM</text>
+                    <!-- Central Quad East & West Greens -->
+                    <rect fill="url(#lawnTexture)" height="150" rx="12" stroke="#c8e6c9" stroke-width="1" width="180" x="220" y="270"></rect>
+                    <rect fill="url(#lawnTexture)" height="150" rx="12" stroke="#c8e6c9" stroke-width="1" width="180" x="600" y="270"></rect>
+                    <text fill="#388e3c" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" text-anchor="middle" x="310" y="350">Memorial Grove</text>
+                    <text fill="#388e3c" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" text-anchor="middle" x="690" y="350">Founder's Lawn</text>
+                    <!-- South Entrance Gardens -->
+                    <rect fill="url(#lawnTexture)" height="60" rx="8" width="100" x="360" y="590"></rect>
+                    <rect fill="url(#lawnTexture)" height="60" rx="8" width="100" x="540" y="590"></rect>
+                  </g>
+
+                  <!-- Pedestrian Walkway Infrastructure -->
+                  <g id="campus-walkways">
+                    <rect fill="#eceff1" height="520" rx="4" width="60" x="470" y="150"></rect>
+                    <rect fill="#eceff1" height="46" rx="4" width="760" x="120" y="220"></rect>
+                    <rect fill="#eceff1" height="34" rx="4" width="220" x="470" y="440"></rect>
+                    <rect fill="#eceff1" height="34" rx="4" width="230" x="300" y="440"></rect>
+                  </g>
+
+                  <!-- Central Plaza & Fountain (Landmark) -->
+                  <g id="central-fountain-plaza">
+                    <circle cx="500" cy="345" fill="#e0e0e0" r="54" stroke="#cfd8dc" stroke-width="2"></circle>
+                    <circle cx="500" cy="345" fill="#ffffff" r="42"></circle>
+                    <circle cx="500" cy="345" fill="#80deea" r="26" stroke="#00acc1" stroke-width="2"></circle>
+                    <circle cx="500" cy="345" fill="#26c6da" r="14"></circle>
+                    <circle cx="500" cy="345" fill="#00838f" r="5"></circle>
+                    <text fill="#37474f" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="500" y="415">Central Fountain &amp; Plaza</text>
+                  </g>
+
+                  <!-- ============================================== -->
+                  <!-- BUILDINGS                                      -->
+                  <!-- ============================================== -->
+
+                  <!-- 1. B BLOCK – Library (Top Left) -->
+                  <g filter="url(#buildingShadow)" id="building-b-block" class="cursor-pointer">
+                    <rect fill="#fffbeb" height="110" rx="8" stroke="#f59e0b" stroke-width="1.5" width="170" x="130" y="90"></rect>
+                    <rect fill="#fef3c7" height="90" rx="4" stroke="#fbbf24" stroke-width="1" width="150" x="140" y="100"></rect>
+                    <circle cx="160" cy="120" fill="#d97706" r="10"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="124">B</text>
+                    <text fill="#78350f" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" x="180" y="124">Central Library</text>
+                    <text fill="#92400e" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="145" y="152">Media Vault &amp; Study Carrels</text>
+                    <text fill="#b45309" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="145" y="172">Open 24/7 • RFID Turnstile</text>
+                  </g>
+
+                  <!-- 2. L BLOCK – Placement Office (Top Right) -->
+                  <g filter="url(#buildingShadow)" id="building-l-block" class="cursor-pointer">
+                    <rect fill="#ecfdf5" height="110" rx="8" stroke="#10b981" stroke-width="1.5" width="170" x="700" y="90"></rect>
+                    <rect fill="#d1fae5" height="90" rx="4" stroke="#34d399" stroke-width="1" width="150" x="710" y="100"></rect>
+                    <circle cx="730" cy="120" fill="#059669" r="10"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="730" y="124">L</text>
+                    <text fill="#064e3b" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" x="750" y="124">Placement Office</text>
+                    <text fill="#065f46" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="715" y="152">Corporate Relations Center</text>
+                    <text fill="#047857" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="715" y="172">Interview Suites 1-12</text>
+                  </g>
+
+                  <!-- 3. A BLOCK – Academic Block (Mid-West) -->
+                  <g filter="url(#buildingShadow)" id="building-a-block" class="cursor-pointer">
+                    <rect fill="#f0f3ff" height="110" rx="8" stroke="#4a607c" stroke-width="1.5" width="160" x="130" y="300"></rect>
+                    <rect fill="#d2e4ff" height="90" rx="4" stroke="#a3bfe6" stroke-width="1" width="140" x="140" y="310"></rect>
+                    <circle cx="160" cy="330" fill="#1c2541" r="10"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="334">A</text>
+                    <text fill="#06102b" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" x="180" y="334">Academic Block</text>
+                    <text fill="#324863" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="145" y="360">Faculty Advising Chambers</text>
+                    <text fill="#4a607c" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="145" y="380">Dean of Curriculum</text>
+                  </g>
+
+                  <!-- 4. C BLOCK – Examination Office (South-West) -->
+                  <g filter="url(#buildingShadow)" id="building-c-block" class="cursor-pointer">
+                    <rect fill="#eff6ff" height="110" rx="8" stroke="#3b82f6" stroke-width="1.5" width="160" x="130" y="470"></rect>
+                    <rect fill="#dbeafe" height="90" rx="4" stroke="#93c5fd" stroke-width="1" width="140" x="140" y="480"></rect>
+                    <circle cx="160" cy="500" fill="#2563eb" r="10"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="504">C</text>
+                    <text fill="#1e3a8a" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" x="180" y="504">Examination Hub</text>
+                    <text fill="#1d4ed8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="145" y="530">Controller of Exams &amp; Records</text>
+                    <text fill="#2563eb" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="145" y="550">Hall Booking Desk</text>
+                  </g>
+
+                  <!-- 5. HOSTEL ZONE – Residential Complex (East-Central) -->
+                  <g filter="url(#buildingShadow)" id="building-hostel-zone" class="cursor-pointer">
+                    <rect fill="#faf5ff" height="120" rx="8" stroke="#a855f7" stroke-width="1.5" width="180" x="730" y="470"></rect>
+                    <rect fill="#f3e8ff" height="100" rx="4" stroke="#d8b4fe" stroke-width="1" width="160" x="740" y="480"></rect>
+                    <circle cx="760" cy="500" fill="#7e22ce" r="10"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="760" y="504">H</text>
+                    <text fill="#581c87" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" x="780" y="504">Hostel Zone</text>
+                    <text fill="#6b21a8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="745" y="530">Housing Admin &amp; Wardens</text>
+                    <text fill="#9333ea" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="745" y="550">Dormitory Desks &amp; Dining Pass</text>
+                  </g>
+
+                  <!-- 6. D BLOCK – Administrative Office (Mid-East) -->
+                  <g filter="url(#activeBuildingGlow)" id="building-d-block" class="cursor-pointer">
+                    <rect fill="#1c2541" height="140" rx="10" stroke="#239e91" stroke-width="2.5" width="200" x="670" y="300"></rect>
+                    <rect fill="#0b132b" height="116" rx="6" width="176" x="682" y="312"></rect>
+                    <rect fill="#239e91" fill-opacity="0.25" height="74" rx="4" stroke="#239e91" stroke-dasharray="3,3" stroke-width="1.5" width="80" x="688" y="348"></rect>
+                    <text fill="#89f5e7" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="728" y="388">ROOM D-104</text>
+                    <text fill="#d2e4ff" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" text-anchor="middle" x="728" y="402">Registrar Desk</text>
+                    <circle cx="704" cy="330" fill="#239e91" r="12"></circle>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="704" y="335">D</text>
+                    <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" x="726" y="335">D Block – Admin</text>
+                    <text fill="#bdc5e9" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="780" y="365">Office of Registrar</text>
+                    <text fill="#bdc5e9" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="780" y="382">Student Records</text>
+                    <text fill="#bdc5e9" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" x="780" y="399">Cashier Counter</text>
+                    <text fill="#89f5e7" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" x="780" y="416">Ground &amp; 1st Fl.</text>
+                    <rect fill="#239e91" height="30" rx="3" width="10" x="662" y="360"></rect>
+                    <polygon fill="#239e91" points="660,375 650,370 650,380"></polygon>
+                  </g>
+
+                  <!-- ============================================== -->
+                  <!-- DYNAMIC ANIMATED WALKING ROUTE OVERLAY         -->
+                  <!-- ============================================== -->
+                  <g id="walking-route-path">
+                    <!-- Under-glow line for contrast -->
+                    <path id="svg-walking-path-underglow" d="M 500 660 L 500 457 L 664 457 L 664 375" fill="none" opacity="0.85" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+                    <!-- Vibrant Teal Dashed Walking Line -->
+                    <path id="svg-walking-path-line" class="animated-walking-route" d="M 500 660 L 500 457 L 664 457 L 664 375" fill="none" stroke="#239e91" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+
+                    <!-- START POINT: South Gate Pin -->
+                    <g transform="translate(500, 660)">
+                      <circle cx="0" cy="0" fill="#06102b" r="14" stroke="#ffffff" stroke-width="2.5"></circle>
+                      <circle cx="0" cy="0" fill="#89f5e7" r="6"></circle>
+                      <g transform="translate(-110, -32)">
+                        <rect fill="#06102b" height="26" rx="6" width="220"></rect>
+                        <text fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="17">
+                          START: Main Entrance (South Gate)
+                        </text>
+                        <polygon fill="#06102b" points="110,26 104,32 116,32"></polygon>
+                      </g>
+                    </g>
+
+                    <!-- DESTINATION MARKER: Pulsing Halo & Pin -->
+                    <g id="svg-destination-marker" transform="translate(664, 375)">
+                      <circle class="radar-halo" cx="0" cy="0" fill="none" r="20" stroke="#239e91" stroke-width="2.5"></circle>
+                      <circle cx="0" cy="0" fill="#239e91" r="13" stroke="#ffffff" stroke-width="2.5"></circle>
+                      <circle cx="0" cy="0" fill="#ffffff" r="5"></circle>
+                      <!-- Overhead Flag -->
+                      <g transform="translate(-10, -56)">
+                        <rect fill="#1c2541" height="42" rx="8" stroke="#89f5e7" stroke-width="1.5" width="165" x="0" y="0"></rect>
+                        <text id="svg-dest-flag-title" fill="#89f5e7" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" x="12" y="18">Administrative Office</text>
+                        <text id="svg-dest-flag-sub" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" x="12" y="32">D Block Entrance (East Wing)</text>
+                        <polygon fill="#1c2541" points="15,42 22,50 28,42"></polygon>
+                      </g>
+                    </g>
+                  </g>
+
+                </svg>
+              </div>
+
+              <!-- Bottom Status Tray -->
+              <div class="bg-surface-container-low px-space-md py-space-sm flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/20">
+                <div class="flex items-center gap-space-md">
+                  <span class="flex items-center gap-1.5 text-primary font-medium">
+                    <span class="material-symbols-outlined text-[16px] text-on-tertiary-container">check_circle</span>
+                    <span>Active Route Calculated via Barrier-Free Paved Corridor</span>
+                  </span>
+                  <span class="hidden sm:inline text-outline-variant">•</span>
+                  <span class="hidden sm:inline">Gradient: &lt; 2.5% (Step-Free)</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <button class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-primary hover:bg-surface-container-high transition-colors flex items-center gap-1 cursor-pointer" onclick="alert('Route link copied to clipboard!')">
+                    <span class="material-symbols-outlined text-[14px]">share</span>
+                    <span>Share Route</span>
+                  </button>
+                  <button class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-primary hover:bg-surface-container-high transition-colors flex items-center gap-1 cursor-pointer" onclick="window.print()">
+                    <span class="material-symbols-outlined text-[14px]">print</span>
+                    <span>Print Map PDF</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PERSISTENT FOOTER -->
+  <footer class="w-full bg-surface-container-low mt-auto pt-space-xl pb-space-lg shadow-[0_-1px_12px_rgba(28,37,65,0.03)] border-t border-outline-variant/30">
+    <div class="w-full max-w-7xl mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-lg pb-space-xl">
+        
+        <!-- Col 1: Brand & Node Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-space-sm mb-space-sm">
+            <div class="w-7 h-7 rounded bg-primary-container text-on-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px]">school</span>
+            </div>
+            <span class="font-headline-sm text-headline-sm text-primary font-bold">UniGuide AI</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Official Intelligent Collegiate Concierge providing verified university policy guidance, registrar assistance, and campus intelligence.
+          </p>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+            <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+            <span>Collegiate Node Active (Fall 2025)</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Academic Services -->
+        <div>
+          <h3 class="font-title-md text-title-md text-primary mb-space-md font-bold">Academic Services</h3>
+          <ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Registrar &amp; Records (D Block)</a></li>
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Undergraduate Advising (A Block)</a></li>
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Central Library (B Block)</a></li>
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Examination Hub (C Block)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Student Life & Map -->
+        <div>
+          <h3 class="font-title-md text-title-md text-primary mb-space-md font-bold">Student Life &amp; Campus</h3>
+          <ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+            <li><a href="#map" data-path="campus-map" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Interactive Campus Map</a></li>
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Placement Training (L Block)</a></li>
+            <li><a href="#services" data-path="campus-services" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Hostel Administration (Hostel Zone)</a></li>
+            <li><a href="#chat" data-path="ask-uniguide" class="hover:text-on-surface cursor-pointer transition-colors text-inherit no-underline">Ask UniGuide Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Urgent Emergency -->
+        <div>
+          <h3 class="font-title-md text-title-md text-primary mb-space-md font-bold">Urgent &amp; Emergency</h3>
+          <div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30">
+            <div class="flex items-center gap-2 text-error mb-1 font-bold">
+              <span class="material-symbols-outlined text-[18px]">emergency</span>
+              <span class="font-label-lg text-label-lg">Campus Dispatch 24/7</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+              For immediate assistance or security support on demonstration grounds.
+            </p>
+            <span class="font-title-md text-title-md text-primary font-bold">(555) 019-9111</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal & FERPA Strip -->
+      <div class="pt-space-lg border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex flex-col sm:flex-row items-center gap-space-sm sm:gap-space-md text-center sm:text-left">
+          <p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 UniGuide AI Campus System. All rights reserved.</p>
+          <span class="hidden sm:inline text-outline-variant">|</span>
+          <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">verified_user</span>
+            FERPA &amp; Academic Integrity Compliant System
+          </p>
+        </div>
+        <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+          <a class="hover:text-on-surface transition-colors cursor-pointer" onclick="alert('UniGuide AI strictly follows academic integrity and privacy standards.')">Privacy Policy</a>
+          <a class="hover:text-on-surface transition-colors cursor-pointer" onclick="alert('Accessible schematic wayfinding with step-free corridor guidance.')">Accessibility</a>
+          <a class="hover:text-on-surface transition-colors cursor-pointer" onclick="alert('Illustrative demo campus map for competition demonstration.')">Demo Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Application JS Controller -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

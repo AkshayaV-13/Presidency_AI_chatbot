@@ -1,0 +1,73 @@
+{
+  "university_info": {
+    "academics": {
+      "department": "Academics",
+      "statement": "Students may contact their faculty advisor for academic-related assistance.",
+      "location": "A Block",
+      "recommended_action": "Contact your faculty advisor for academic-related assistance and guidance.",
+      "source": "Official University Academic FAQ",
+      "keywords": ["academics", "advisor", "faculty", "subject", "subjects", "course", "curriculum", "professor"]
+    },
+    "attendance": {
+      "department": "Academics / Administration",
+      "statement": "Students should follow the minimum attendance requirement prescribed by university regulations.",
+      "location": "A Block (Faculty Advisor) or D Block (Administrative Office)",
+      "recommended_action": "Consult official university regulations or reach out to your faculty advisor. Note that specific percentage numbers are not provided in the knowledge base.",
+      "source": "University Regulations",
+      "keywords": ["attendance", "attendance percentage", "minimum attendance", "shortage", "condonation", "absent"]
+    },
+    "examinations": {
+      "department": "Examinations",
+      "statement": "Timetables and notifications are published through official university channels.",
+      "location": "C Block",
+      "recommended_action": "Monitor official university channels for timetables and notifications. Specific dates are published exclusively through those channels.",
+      "source": "Office of the Controller of Examinations",
+      "keywords": ["exam", "exams", "examination", "timetable", "schedule", "dates", "hall ticket", "notifications", "results"]
+    },
+    "placements": {
+      "department": "Placements",
+      "statement": "Students should contact the Placement Department for training and placement-related information.",
+      "location": "L Block",
+      "recommended_action": "Contact the Placement Department at L Block for training schedules and placement-related queries.",
+      "source": "Placement Department Guidelines",
+      "keywords": ["placement", "placements", "training", "jobs", "internship", "campus recruitment", "interview"]
+    },
+    "library": {
+      "department": "Library",
+      "statement": "Students can access library resources according to library timings and regulations.",
+      "location": "B Block",
+      "recommended_action": "Visit B Block to access library resources in accordance with official library timings and regulations.",
+      "source": "Central Library Services",
+      "keywords": ["library", "book", "books", "borrow", "catalog", "study carrel", "reading room", "journal", "journals"]
+    },
+    "hostel": {
+      "department": "Hostel",
+      "statement": "Hostel-related complaints should be submitted to Hostel Administration.",
+      "location": "Hostel Zone",
+      "recommended_action": "Submit your complaint directly to Hostel Administration at the Hostel Zone.",
+      "source": "Hostel Administration & Residential Life",
+      "keywords": ["hostel", "complaint", "room", "dorm", "warden", "maintenance", "accommodation", "residence"]
+    },
+    "administration": {
+      "department": "Administration",
+      "statement": "Students should contact the respective administrative office for certificates and student records.",
+      "location": "D Block",
+      "recommended_action": "Visit the Administrative Office at D Block for certificates and student records.",
+      "source": "Office of the Registrar & Student Records",
+      "keywords": ["bonafide", "certificate", "certificates", "records", "student records", "transcripts", "attestation", "administrative", "administration", "registrar", "office"]
+    },
+    "events": {
+      "department": "Administration",
+      "statement": "University event announcements are shared through the official communication channel.",
+      "location": "D Block",
+      "recommended_action": "Check the official university communication channel for verified event announcements.",
+      "source": "University Communications",
+      "keywords": ["event", "events", "announcements", "fest", "symposium", "seminar", "cultural"]
+    }
+  },
+  "policy_guidelines": {
+    "strict_grounding": true,
+    "unknown_fallback_statement": "I couldn't find verified information about this in the available university information.",
+    "missing_data_notice": "Do not invent attendance percentages, exam dates, fees, contact numbers, email addresses, office timings or other university policies. If the information is not present in the knowledge base, clearly state that it is unavailable."
+  }
+}
