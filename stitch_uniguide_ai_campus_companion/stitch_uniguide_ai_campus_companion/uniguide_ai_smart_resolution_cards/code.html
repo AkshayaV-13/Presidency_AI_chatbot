@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>UniGuide AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6ce", "on-error": "#ffffff", "inverse-on-surface": "#f2f1ee", "outline": "#76767e", "on-surface": "#1a1c1a", "tertiary-container": "#002c28", "inverse-primary": "#bdc5e9", "on-error-container": "#93000a", "surface-container": "#efeeeb", "on-secondary-fixed": "#021d35", "tertiary-fixed": "#89f5e7", "error": "#ba1a1a", "surface": "#faf9f6", "primary-fixed": "#dbe1ff", "on-background": "#1a1c1a", "surface-tint": "#545d7c", "on-primary-fixed-variant": "#3d4664", "secondary-fixed": "#d2e4ff", "background": "#faf9f6", "on-primary-container": "#838cae", "surface-container-highest": "#e3e2e0", "secondary": "#4a607c", "tertiary": "#001512", "inverse-surface": "#2f312f", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#bdc5e9", "surface-dim": "#dbdad7", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#324863", "primary-container": "#1c2541", "on-tertiary-fixed-variant": "#005049", "error-container": "#ffdad6", "surface-variant": "#e3e2e0", "on-secondary-container": "#4c627e", "surface-bright": "#faf9f6", "on-surface-variant": "#45464d", "surface-container-low": "#f4f3f1", "tertiary-fixed-dim": "#6bd8cb", "on-primary-fixed": "#111a36", "surface-container-high": "#e9e8e5", "on-tertiary-fixed": "#00201d", "secondary-fixed-dim": "#b2c8e8", "on-primary": "#ffffff", "secondary-container": "#c8dfff", "on-tertiary-container": "#239e91", "on-secondary": "#ffffff", "primary": "#06102b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "2rem", "gutter": "1.5rem", "margin": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin-lg": "3rem", "space-xl": "2.5rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}] } } } };</script><style>@layer base { html, body { min-height: 100%; margin: 0; padding: 0; background-color: #faf9f6; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen relative antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(28,37,65,0.06)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="UniGuide AI Crest" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCA6N_Wp8Bd0W25LO87tihrx9GatIcG_uwm25N6oQc6yfoeMYnl1BHb-HLicOLu3CKsfa4phgc9HDd6Vfw_oxaCjM-KxTtEglpST3GXwlNRHoW1T3rBcbvYIM1b21n5LgM9vdlSoA1UZeOy_ECYWqNuqA_wkPhl6LZs8Os5B7nGsrIuHWTlgugkb8EESeXb38-3pJUec-Pl3oZZRbDe3JKNUMkPFuYhy9ShouA97ymB"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-title-md text-primary tracking-tight font-bold leading-none">UniGuide AI</span><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-on-tertiary-container"></span></span></div><span class="font-label-sm text-label-sm text-secondary tracking-wide uppercase">Campus Companion</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-11 h-11 flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOdGK49rwneYZe1NhoxrXDaGNlMx4zIDRxG8jcDeK3UTaWhC-fDxNVWJEUimoRYAdyqNc03K8syEJZdjG_BQyrEAj0ap66LP-c1VUeHgCi9yypdOzHV887ELDHOCkykYSU8PpuT9AF-JASpfRtTAHjYi-GhkR2_nvtjHN7GDLvINY2RxjMUBdUbVDMgwU4sPRQdKAkiA_r2iHatvvJJcNrbD_Y_ALPDVtYAIF-XGc"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full px-margin-sm space-y-space-lg pb-space-xl">
+<!-- Query 1 Context: Student Chat Bubble -->
+<div class="flex flex-col items-end w-full space-y-space-xs pt-space-sm">
+<div class="flex items-center gap-space-xs pr-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">You</span>
+<span class="font-label-sm text-label-sm text-outline">10:42 AM</span>
+</div>
+<div class="max-w-[85%] bg-primary-container text-on-primary px-space-md py-space-sm rounded-xl rounded-tr-none shadow-md">
+<p class="font-body-md text-body-md">Where is the administrative office?</p>
+</div>
+</div>
+<!-- Smart AI Concierge Response Block 1 -->
+<div class="flex flex-col w-full space-y-space-md">
+<!-- Smart Department Detection Bar -->
+<div class="bg-surface-container-high rounded-full px-space-md py-2 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="text-base select-none">🎯</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Detected Department</span>
+<span class="font-title-md text-title-md text-primary truncate font-bold">Central Administration &amp; Registrar (Block D)</span>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2.5 py-1 rounded-full flex items-center gap-1.5 shrink-0 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-bold">99.4% Match</span>
+</div>
+</div>
+<!-- Main Smart Resolution Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- Card Header: Deep Navy & Gold Accent -->
+<div class="bg-gradient-to-r from-primary via-primary-container to-primary px-space-md py-space-md text-on-primary flex items-start justify-between relative overflow-hidden">
+<div class="flex items-center gap-space-sm z-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/15 backdrop-blur-md flex items-center justify-center text-tertiary-fixed shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-1 text-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">school</span>
+<span class="font-label-sm text-label-sm tracking-wide uppercase">University Services Hub</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-surface leading-tight mt-0.5">Administrative Office</h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim">D Block • Central Campus</p>
+</div>
+</div>
+<!-- Stylized University Motif Backdrop -->
+<div class="absolute -right-4 -bottom-6 opacity-10 pointer-events-none select-none text-surface">
+<span class="material-symbols-outlined text-[100px]">verified</span>
+</div>
+</div>
+<!-- Card Body Content -->
+<div class="p-space-md flex flex-col space-y-space-md">
+<!-- Short & Understandable Response -->
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            The <strong class="font-title-md text-primary">Central Administrative Office</strong> handles fee verification, scholarship attestations, bonafide certificates, and official transcripts. It is situated on the <strong>1st Floor of D Block</strong>, directly adjacent to the University Plaza.
+          </p>
+</div>
+<!-- Campus Location Visual Feature -->
+<div class="w-full h-36 rounded-lg overflow-hidden relative shadow-sm">
+<div class="w-full h-full bg-cover bg-center" data-location="University Central Administration Block D, Campus Plaza" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-space-sm">
+<div class="flex items-center gap-1.5 text-on-primary">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">near_me</span>
+<span class="font-label-md text-label-md font-medium">Adjacent to North Fountain Courtyard</span>
+</div>
+</div>
+</div>
+<!-- Key Office Details Grid -->
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Detail Row 1 -->
+<div class="flex items-center gap-space-sm p-2.5 rounded-lg bg-surface-container">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary">Office Head</span>
+<span class="font-title-md text-title-md text-on-surface truncate">Registrar Office &amp; Student Affairs</span>
+</div>
+</div>
+<!-- Detail Row 2 -->
+<div class="flex items-center gap-space-sm p-2.5 rounded-lg bg-surface-container">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-tertiary-container shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary">Working Hours</span>
+<span class="font-title-md text-title-md text-on-surface">Mon – Fri: 9:00 AM – 4:30 PM</span>
+<span class="font-label-sm text-label-sm text-secondary">Lunch break: 1:00 PM – 2:00 PM</span>
+</div>
+</div>
+<!-- Detail Row 3 -->
+<div class="flex items-center gap-space-sm p-2.5 rounded-lg bg-surface-container">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary">Specific Location</span>
+<span class="font-title-md text-title-md text-on-surface">Room D-104, First Floor, D Block</span>
+</div>
+</div>
+</div>
+<!-- Recommended Next Action Buttons -->
+<div class="flex flex-col space-y-2 pt-1">
+<!-- Primary Action Button: Teal Filled -->
+<button class="w-full h-11 bg-on-tertiary-container active:scale-[0.99] text-on-tertiary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+<span>Open Live Campus Navigation (D Block)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary Action Button: Frosted Neutral -->
+<button class="w-full h-11 bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">event_available</span>
+<span>Request Token / Appointment</span>
+</button>
+</div>
+<!-- Information Source & Trust Indicator Accordion -->
+<div class="pt-2">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col space-y-2">
+<div class="flex items-center gap-1.5 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Verified by University Registrar Office Bulletin • Fall 2024</span>
+</div>
+<!-- Accordion Trigger and Details -->
+<details class="group cursor-pointer">
+<summary class="list-none flex items-center justify-between text-secondary hover:text-primary transition-colors">
+<span class="font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span>Why this answer? (Source verification details)</span>
+</span>
+<span class="material-symbols-outlined text-[16px] transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-2 pt-2 bg-surface-container-lowest p-2.5 rounded text-on-surface-variant font-body-sm text-body-sm space-y-1.5">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">Policy Directive Reference:</span>
+<span class="font-label-sm text-label-sm font-mono text-primary font-bold">#REG-2024-B4</span>
+</div>
+<p>Derived from University Administrative Directory 2024–2025 rev. 3. Cross-indexed against active campus facilities database and live Bursar service desk schedules.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider indicating a second conversation branch / demonstration -->
+<div class="relative py-2 flex items-center justify-center">
+<div class="w-full h-px bg-surface-container-highest"></div>
+<span class="absolute bg-surface px-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Uncertain Query Example</span>
+</div>
+<!-- Query 2 Context: Student Chat Bubble for Unhandled Query -->
+<div class="flex flex-col items-end w-full space-y-space-xs">
+<div class="flex items-center gap-space-xs pr-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">You</span>
+<span class="font-label-sm text-label-sm text-outline">10:45 AM</span>
+</div>
+<div class="max-w-[85%] bg-primary-container text-on-primary px-space-md py-space-sm rounded-xl rounded-tr-none shadow-md">
+<p class="font-body-md text-body-md">Can I transfer my dining hall meal credits to next semester's tuition fee?</p>
+</div>
+</div>
+<!-- Friendly Unknown-Information Card (Amber/Cream Warning Theme, clear & non-alarming) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- Non-Alarming Friendly Header Banner -->
+<div class="bg-surface-container-high px-space-md py-space-sm flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">AI Knowledge Boundary</span>
+<h3 class="font-title-md text-title-md text-primary font-bold leading-tight">Information Not Available in Current Campus Records</h3>
+</div>
+</div>
+<div class="p-space-md flex flex-col space-y-space-md">
+<!-- Friendly Explanation -->
+<div class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-lg">
+<span class="material-symbols-outlined text-[22px] text-secondary shrink-0 mt-0.5">policy</span>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+          I couldn't find meal credit to tuition transfer regulations in the university policies currently available to me. Auxiliary dining accounts are typically managed independently from academic bursar credits.
+        </p>
+</div>
+<!-- Helpful Next Step Card -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col space-y-space-sm">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span class="font-label-lg text-label-lg">Recommended Path Forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          We recommend contacting the <strong>Accounts &amp; Finance Division in D Block (Window 3)</strong> or checking the official Student Financial Handbook.
+        </p>
+<div class="flex items-center gap-space-xs text-secondary pt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">Window 3 In-person Hours: 10:00 AM – 3:00 PM</span>
+</div>
+</div>
+<!-- Action Buttons for Routing -->
+<div class="flex flex-col space-y-2">
+<button class="w-full h-11 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">turn_right</span>
+<span>Route to Accounts Office (D Block)</span>
+</button>
+<button class="w-full h-11 bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">outgoing_mail</span>
+<span>Submit Inquiry to Finance Desk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Suggested Follow-Up Question Chips -->
+<div class="flex flex-col space-y-space-xs pt-1">
+<div class="flex items-center gap-1.5 px-1">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Suggested Questions</span>
+</div>
+<!-- Scrollable chip stream -->
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">payments</span>
+<span>What is the refund policy on dining dollars?</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span>Fall semester tuition payment deadline</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-primary px-3 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">call</span>
+<span>Call Bursar Helpline</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for suggestion chips
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.innerText.includes('?')) {
+        const text = this.innerText.trim();
+        console.log('User queued suggestion:', text);
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(28,37,65,0.05)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="campus-home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors relative text-primary font-bold" data-path="ai-concierge" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">chat_bubble</span><span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span></div><span class="font-label-sm text-label-sm mt-0.5">AI Chat</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="campus-map" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Campus Map</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="academic-directory" href="#"><span class="material-symbols-outlined text-[24px]">domain</span><span class="font-label-sm text-label-sm mt-0.5">Directory</span></a></div></nav></body></html>

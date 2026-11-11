@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>UniGuide AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6ce", "on-error": "#ffffff", "inverse-on-surface": "#f2f1ee", "outline": "#76767e", "on-surface": "#1a1c1a", "tertiary-container": "#002c28", "inverse-primary": "#bdc5e9", "on-error-container": "#93000a", "surface-container": "#efeeeb", "on-secondary-fixed": "#021d35", "tertiary-fixed": "#89f5e7", "error": "#ba1a1a", "surface": "#faf9f6", "primary-fixed": "#dbe1ff", "on-background": "#1a1c1a", "surface-tint": "#545d7c", "on-primary-fixed-variant": "#3d4664", "secondary-fixed": "#d2e4ff", "background": "#faf9f6", "on-primary-container": "#838cae", "surface-container-highest": "#e3e2e0", "secondary": "#4a607c", "tertiary": "#001512", "inverse-surface": "#2f312f", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#bdc5e9", "surface-dim": "#dbdad7", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#324863", "primary-container": "#1c2541", "on-tertiary-fixed-variant": "#005049", "error-container": "#ffdad6", "surface-variant": "#e3e2e0", "on-secondary-container": "#4c627e", "surface-bright": "#faf9f6", "on-surface-variant": "#45464d", "surface-container-low": "#f4f3f1", "tertiary-fixed-dim": "#6bd8cb", "on-primary-fixed": "#111a36", "surface-container-high": "#e9e8e5", "on-tertiary-fixed": "#00201d", "secondary-fixed-dim": "#b2c8e8", "on-primary": "#ffffff", "secondary-container": "#c8dfff", "on-tertiary-container": "#239e91", "on-secondary": "#ffffff", "primary": "#06102b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "2rem", "gutter": "1.5rem", "margin": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin-lg": "3rem", "space-xl": "2.5rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}] } } } };</script><style>@layer base { html, body { min-height: 100%; margin: 0; padding: 0; background-color: #faf9f6; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen relative antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(28,37,65,0.06)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="UniGuide AI Crest" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCA6N_Wp8Bd0W25LO87tihrx9GatIcG_uwm25N6oQc6yfoeMYnl1BHb-HLicOLu3CKsfa4phgc9HDd6Vfw_oxaCjM-KxTtEglpST3GXwlNRHoW1T3rBcbvYIM1b21n5LgM9vdlSoA1UZeOy_ECYWqNuqA_wkPhl6LZs8Os5B7nGsrIuHWTlgugkb8EESeXb38-3pJUec-Pl3oZZRbDe3JKNUMkPFuYhy9ShouA97ymB"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-title-md text-primary tracking-tight font-bold leading-none">UniGuide AI</span><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-on-tertiary-container"></span></span></div><span class="font-label-sm text-label-sm text-secondary tracking-wide uppercase">Campus Companion</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-11 h-11 flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOdGK49rwneYZe1NhoxrXDaGNlMx4zIDRxG8jcDeK3UTaWhC-fDxNVWJEUimoRYAdyqNc03K8syEJZdjG_BQyrEAj0ap66LP-c1VUeHgCi9yypdOzHV887ELDHOCkykYSU8PpuT9AF-JASpfRtTAHjYi-GhkR2_nvtjHN7GDLvINY2RxjMUBdUbVDMgwU4sPRQdKAkiA_r2iHatvvJJcNrbD_Y_ALPDVtYAIF-XGc"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full">
+<!-- Status & Quick Announcement Ribbon -->
+<div class="w-full bg-primary text-on-primary px-margin py-space-xs flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="relative flex h-2 w-2 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-on-tertiary-container"></span>
+</span>
+<p class="font-label-sm text-label-sm truncate">Semester Registry &amp; Verification Desks are operational until 5:00 PM today</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed flex-shrink-0 ml-space-xs">Term 2024-25</span>
+</div>
+<!-- Header Section -->
+<div class="px-margin pt-space-lg pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Campus Governance &amp; Student Operations</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">University Services &amp; Department Directory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse official campus divisions, direct contacts, office locations, and service desks.</p>
+</div>
+<!-- Search & Omnibox Interface -->
+<div class="px-margin pt-space-sm pb-space-xs">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-space-md text-secondary text-[22px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-12 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:ring-0 placeholder:text-outline transition-shadow" id="directorySearch" placeholder="Filter departments, officers, services..." type="search"/>
+<button aria-label="Clear filter" class="absolute right-space-sm hidden w-8 h-8 rounded-full items-center justify-center text-outline hover:text-primary transition-colors" id="clearSearch">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Category Filters -->
+<div class="w-full overflow-x-auto no-scrollbar py-space-sm px-margin flex items-center gap-space-xs">
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-cat="all">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+      All (8)
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="academics">
+      Academics
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="examinations">
+      Examinations
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="placements">
+      Placements
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="hostel">
+      Hostel
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="admin">
+      Admin
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="library">
+      Library
+    </button>
+<button class="category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95" data-cat="student-affairs">
+      Student Affairs
+    </button>
+</div>
+<!-- Academic Building Visual Overview Strip -->
+<div class="px-margin py-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">map</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-bold leading-tight">North &amp; Central Quadrangles</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Real-time counter queues &amp; building navigation</span>
+</div>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm whitespace-nowrap shadow-sm hover:bg-secondary-fixed transition-colors">
+        Live Map
+      </button>
+</div>
+</div>
+<!-- Cards Listing Container -->
+<div class="px-margin py-space-md flex flex-col gap-space-md" id="cardsList">
+<!-- Card 1: Central Administration -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="admin all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Central Administration</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">D Block • 1st Floor</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed"></span> Open
+        </span>
+</div>
+<!-- Lead officer info -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-bold">Designated Authority</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Office of the Registrar</span>
+</div>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Key Services &amp; Petitions</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Bonafide certificates</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Official transcripts</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Name correction</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Student ID replacement</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI About Admin</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate D Block</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Examination Cell -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="examinations all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Examination Cell</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">C Block • Ground Floor</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed"></span> Counter 1-4
+        </span>
+</div>
+<!-- Lead officer info -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-bold">Supervising Official</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Controller of Examinations (COE)</span>
+</div>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Evaluation &amp; Records</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Hall tickets issuance</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Semester grade cards</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Re-evaluation appeals</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Backlog registration</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI About Exams</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate C Block</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Career Development & Placements -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="placements all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">work</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Career Development &amp; Placements</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">B Block • 3rd Floor</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span> Drives Active
+        </span>
+</div>
+<!-- Lead officer info -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">person_apron</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-bold">Executive Liaison</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Training &amp; Placement Officer (TPO)</span>
+</div>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Corporate Relations</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Campus recruitment</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Mock interviews</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Resume repository</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Internship NOC</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI Placements</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate B Block</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Academic Dean & Registrar -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="academics all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Academic Dean &amp; Registrar</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">D Block • 2nd Floor</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed"></span> In Session
+        </span>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Curricular Affairs</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Curriculum advisement</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Credit transfer equivalency</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Semester registration</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Major change approvals</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI Academics</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate D Block</span>
+</button>
+</div>
+</article>
+<!-- Card 5: Central University Library -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="library all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">local_library</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Central University Library</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">L Block • All Floors</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed"></span> 24/7 Floor Open
+        </span>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Research Resources</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Digital catalog check</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Book reservations</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">JSTOR / IEEE access</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Study carrels reservation</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI Library</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate L Block</span>
+</button>
+</div>
+</article>
+<!-- Card 6: Hostel & Housing Office -->
+<article class="dept-card bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-all" data-categories="hostel student-affairs all">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-primary font-bold">Hostel &amp; Housing Office</h2>
+<div class="flex items-center gap-space-xs text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-sm text-label-sm">Block B Annexe • Ground Floor</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed"></span> Helpdesk Live
+        </span>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Residential Administration</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Room allocation</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Mess rebate forms</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Warden permissions</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm">Room maintenance tickets</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span>Ask AI Hostel</span>
+</button>
+<button class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Locate Hostel</span>
+</button>
+</div>
+</article>
+<!-- Empty State Container (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-space-xl px-margin text-center bg-surface-container-low rounded-xl" id="noResultsState">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">No Directory Records Found</h3>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-xs">We couldn't match any department, office lead, or service keyword to your query.</p>
+<button class="mt-space-md px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm" id="resetFilters">
+        Reset Search &amp; Filters
+      </button>
+</div>
+</div>
+<!-- Interactive Campus Quadrant Preview Section -->
+<div class="px-margin pt-space-xs pb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<span class="font-title-md text-title-md text-primary font-bold">Direct Navigational Waypoints</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">4 Zones</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-primary font-bold">C &amp; D Administration</span>
+<span class="font-body-sm text-body-sm text-secondary">Central Quadrangle • East Walkway</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-primary font-bold">B Block Engineering</span>
+<span class="font-body-sm text-body-sm text-secondary">Tech Wing • Near North Lawn</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-primary font-bold">L Block Research Library</span>
+<span class="font-body-sm text-body-sm text-secondary">Heritage Square • South Gate</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-md text-label-md text-primary font-bold">Hostel Block B Annexe</span>
+<span class="font-body-sm text-body-sm text-secondary">Residential Sector • West Court</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Fast-Help Banner -->
+<div class="px-margin pb-space-lg">
+<div class="bg-primary text-on-primary rounded-xl p-space-lg shadow-xl relative overflow-hidden flex flex-col gap-space-md">
+<!-- Ambient subtle background ornament -->
+<div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full bg-primary-container opacity-50 pointer-events-none"></div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-on-tertiary-container text-tertiary-container flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-title-md text-title-md text-on-primary font-bold">Can't find a specific office?</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5 leading-snug">
+            Type your question in natural language and UniGuide AI will route you instantly to the right desk.
+          </p>
+</div>
+</div>
+<div class="flex items-center justify-end relative z-10 pt-space-xs">
+<button class="w-full sm:w-auto px-space-lg h-12 bg-on-tertiary-container hover:bg-tertiary-fixed text-tertiary-container font-label-lg text-label-lg rounded-lg shadow-md flex items-center justify-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_spark</span>
+<span>Open AI Concierge</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initDirectoryInteractions() {
+    const searchInput = document.getElementById('directorySearch');
+    const clearBtn = document.getElementById('clearSearch');
+    const cards = document.querySelectorAll('.dept-card');
+    const categoryChips = document.querySelectorAll('.category-chip');
+    const noResults = document.getElementById('noResultsState');
+    const resetBtn = document.getElementById('resetFilters');
+
+    let activeCategory = 'all';
+
+    function filterDirectory() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const textContent = card.innerText.toLowerCase();
+        const cardCats = (card.getAttribute('data-categories') || '').split(' ');
+        
+        const matchesCategory = (activeCategory === 'all') || cardCats.includes(activeCategory);
+        const matchesSearch = !query || textContent.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (query.length > 0) {
+        clearBtn.classList.remove('hidden');
+        clearBtn.classList.add('flex');
+      } else {
+        clearBtn.classList.add('hidden');
+        clearBtn.classList.remove('flex');
+      }
+
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+        noResults.classList.add('flex');
+      } else {
+        noResults.classList.add('hidden');
+        noResults.classList.remove('flex');
+      }
+    }
+
+    // Category button click handlers
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const selectedCat = chip.getAttribute('data-cat');
+        activeCategory = selectedCat;
+
+        // Visual chip state update
+        categoryChips.forEach(c => {
+          c.className = 'category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95';
+        });
+
+        chip.className = 'category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary flex items-center gap-1.5 shadow-sm transition-transform active:scale-95';
+
+        filterDirectory();
+      });
+    });
+
+    // Search bar typing handler
+    searchInput.addEventListener('input', filterDirectory);
+
+    // Clear search button handler
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchInput.focus();
+      filterDirectory();
+    });
+
+    // Reset button inside empty state
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        activeCategory = 'all';
+        categoryChips.forEach(c => {
+          if (c.getAttribute('data-cat') === 'all') {
+            c.className = 'category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary flex items-center gap-1.5 shadow-sm transition-transform active:scale-95';
+          } else {
+            c.className = 'category-chip px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface hover:bg-surface-container-high transition-transform active:scale-95';
+          }
+        });
+        filterDirectory();
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(28,37,65,0.05)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="campus-home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors relative" data-path="ai-concierge" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">chat_bubble</span><span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span></div><span class="font-label-sm text-label-sm mt-0.5">AI Chat</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="campus-map" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Campus Map</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors text-primary font-bold" data-path="academic-directory" href="#"><span class="material-symbols-outlined text-[24px]">domain</span><span class="font-label-sm text-label-sm mt-0.5">Directory</span></a></div></nav></body></html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-bright":"#faf9f6","surface-container-low":"#f4f3f1","on-secondary-fixed":"#021d35","primary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#324863","inverse-surface":"#2f312f","surface-dim":"#dbdad7","on-primary-container":"#838cae","surface":"#faf9f6","outline-variant":"#c6c6ce","primary-fixed-dim":"#bdc5e9","on-surface-variant":"#45464d","on-primary-fixed-variant":"#3d4664","primary-container":"#1c2541","on-tertiary-fixed":"#00201d","secondary-fixed-dim":"#b2c8e8","surface-variant":"#e3e2e0","on-tertiary":"#ffffff","tertiary-container":"#002c28","inverse-on-surface":"#f2f1ee","surface-container-lowest":"#ffffff","secondary":"#4a607c","on-error-container":"#93000a","on-tertiary-container":"#239e91","tertiary-fixed":"#89f5e7","tertiary":"#001512","surface-tint":"#545d7c","secondary-container":"#c8dfff","on-primary-fixed":"#111a36","secondary-fixed":"#d2e4ff","on-background":"#1a1c1a","surface-container-highest":"#e3e2e0","error":"#ba1a1a","on-primary":"#ffffff","background":"#faf9f6","surface-container-high":"#e9e8e5","tertiary-fixed-dim":"#6bd8cb","on-secondary":"#ffffff","primary":"#06102b","on-surface":"#1a1c1a","on-tertiary-fixed-variant":"#005049","surface-container":"#efeeeb","error-container":"#ffdad6","inverse-primary":"#bdc5e9","on-secondary-container":"#4c627e","on-error":"#ffffff","outline":"#76767e"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"margin-lg":"3rem","space-xl":"2.5rem",margin:"1.5rem","space-xs":"0.25rem","gutter-lg":"2rem","space-sm":"0.5rem","space-md":"1rem",gutter:"1.5rem","margin-sm":"1rem","gutter-sm":"1rem","space-lg":"1.5rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"label-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"headline-sm":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},fontSize:{"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(28,37,65,0.04)]"><div class="h-20 w-full px-margin-sm lg:px-margin-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-[0_4px_12px_-2px_rgba(28,37,65,0.12)]"><span class="material-symbols-outlined text-[22px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">UniGuide AI</span><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-wider">Campus Companion</span></div><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Office of Student Success &amp; Academic Advising</span></div></div><nav class="hidden md:flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary font-title-md text-title-md rounded-lg shadow-sm"><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="home" href="#">Home</a><a aria-current="page" class="px-space-md py-2 transition-all bg-primary-container text-on-primary font-title-md text-title-md rounded-lg shadow-sm" data-path="campus-services" href="#">Campus Services</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="campus-map" href="#">Campus Map</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-gradient-to-r from-tertiary-container to-secondary text-on-primary font-label-lg text-label-lg shadow-[0_4px_14px_rgba(0,44,40,0.2)] hover:opacity-95 transition-opacity" data-path="ask-uniguide" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span>Ask UniGuide</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<!-- Live Campus Advisory Ribbon -->
+<div class="w-full bg-primary text-on-primary px-margin-sm lg:px-margin-lg py-2.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="relative flex h-2.5 w-2.5 shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-fixed"></span>
+</span>
+<p class="font-label-md text-label-md truncate">
+<strong class="font-semibold text-tertiary-fixed">Live Window Alert:</strong> Fall 2025 Regular Certificate Services &amp; Transcript Submissions operating at regular hours today.
+      </p>
+</div>
+<div class="hidden sm:flex items-center gap-space-md shrink-0">
+<span class="font-label-sm text-label-sm text-on-primary-container">Collegiate Queue Index: Normal (&lt;8 min)</span>
+<span class="text-tertiary-fixed-dim/60 font-body-sm text-body-sm">•</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">Campus Node UTC-5</span>
+</div>
+</div>
+<!-- Main Exploratory Container -->
+<div class="w-full px-margin-sm lg:px-margin-lg py-space-xl">
+<!-- Title & Structural Context Block -->
+<div class="relative w-full mb-space-xl">
+<div class="absolute -top-10 -right-6 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg relative z-10">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Collegiate Ecosystem Directory</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-space-sm">
+            Campus Services &amp; Department Desks
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Browse official university wings, find assigned service windows, and ask UniGuide AI for immediate self-service guidance.
+          </p>
+</div>
+<!-- Quick Summary Micro-stats -->
+<div class="flex items-center gap-space-md self-start md:self-auto bg-surface-container-low px-space-lg py-space-md rounded-xl shadow-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Core Wings</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-tertiary-container">24/7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AI Support</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FERPA Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Search, Filter & Quick Categorization Toolbar -->
+<div class="w-full bg-surface-container-lowest rounded-2xl shadow-sm p-space-md mb-space-xl">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">search</span>
+<input class="w-full pl-11 pr-10 py-3 rounded-xl bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="department-search" placeholder="Filter departments or services (e.g., transcripts, library carrels, hall tickets)..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary" id="clear-search-btn">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0 shrink-0">
+<button class="filter-chip active-filter px-4 py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary transition-all flex items-center gap-1.5 shadow-sm" data-category="all">
+<span>All Services</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</button>
+<button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" data-category="academics">
+            Academic Affairs
+          </button>
+<button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" data-category="student-life">
+            Student Life
+          </button>
+<button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" data-category="facilities">
+            Facilities
+          </button>
+<button class="filter-chip px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all" data-category="career">
+            Career
+          </button>
+</div>
+</div>
+</div>
+<!-- Master Layout: 12-Column Grid (8 cols tiles, 4 cols persistent detail inspection pane) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- 6 Core Interactive Service Tiles Column (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-primary">Department Wings &amp; Counters</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-secondary" id="visible-count">6 Desks Available</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Click any desk to view active window protocols</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg" id="services-grid">
+<!-- Card 1: Academics (A Block) -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Dean of Academics" data-block="A Block" data-hours="Mon - Fri: 8:30 AM – 4:00 PM (Advising starts at 10 AM)" data-lead-tag="Curriculum, Credit Validation &amp; Faculty Rosters" data-room="A Block • 2nd Floor (Suite A-210)" data-service-cat="academics" data-service-id="academics" data-title="Academics">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Academics</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">A Block</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Active</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Course registrations, credit transfers, syllabus advisement, and faculty advisor appointments.
+                </p>
+</div>
+<!-- Pill tags for capabilities -->
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Add/Drop</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Credit Transfer</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Dean Approval</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto border-t-0 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span class="font-label-sm text-label-sm">Dean of Academics</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Examinations (C Block) -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Controller of Examinations" data-block="C Block" data-hours="Mon - Fri: 9:00 AM – 5:00 PM (Window closes at 4:30 PM)" data-lead-tag="Evaluation, Hall Tickets &amp; Official Grade Registers" data-room="C Block • Ground Floor (Wing C-012)" data-service-cat="academics" data-service-id="examinations" data-title="Examinations">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Examinations</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">C Block</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Active</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Exam schedule memos, hall ticket re-issuance, re-evaluation appeals, and grade cards.
+                </p>
+</div>
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Hall Tickets</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Grade Recheck</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Memos</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm">Controller of Examinations</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Placements (L Block) -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Training &amp; Placement Officer" data-block="L Block" data-hours="Mon - Sat: 9:00 AM – 6:00 PM" data-lead-tag="Industry Career Readiness &amp; Campus Hiring Protocols" data-room="L Block • 3rd Floor (Corporate Hub L-301)" data-service-cat="career" data-service-id="placements" data-title="Placements">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-tertiary-container group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[22px]">work</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Placements</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">L Block</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">Recruiting</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  On-campus recruitment drives, mock interviews, summer internship approvals, corporate liaisons.
+                </p>
+</div>
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Drive Signups</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Internships</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">NOC Form</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">business_center</span>
+<span class="font-label-sm text-label-sm">Training &amp; Placement Officer</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4: Library (B Block) -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Chief Librarian" data-block="B Block" data-hours="Open 24/7 (Desk Circulation: 8:00 AM – 10:00 PM)" data-lead-tag="Institutional Repositories &amp; Academic Research Carrels" data-room="B Block • Central Atrium (Desk B-001)" data-service-cat="facilities" data-service-id="library" data-title="Library">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary-fixed-dim"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">local_library</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Library</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">B Block</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Open 24/7</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Central library access, 24/7 quiet study carrels, JSTOR/IEEE research access, inter-library book requests.
+                </p>
+</div>
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">IEEE Xplore</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Carrel Booking</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Loan Extensions</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">import_contacts</span>
+<span class="font-label-sm text-label-sm">Chief Librarian</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 5: Hostel & Student Housing (Hostel Zone) -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Chief Warden's Office" data-block="Hostel Zone" data-hours="Mon - Sun: 7:00 AM – 9:00 PM (Emergency duty on-call)" data-lead-tag="Residential Life, Mess Services &amp; Campus Wellbeing" data-room="Hostel Administrative Center (Quad H-12)" data-service-cat="student-life" data-service-id="hostel" data-title="Hostel &amp; Student Housing">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">apartment</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Hostel &amp; Housing</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Hostel Zone</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Residential</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Room maintenance tickets, mess rebates, curfew extension slips, warden permissions.
+                </p>
+</div>
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Mess Rebate</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Night Gate Pass</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Maintenance</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">home_work</span>
+<span class="font-label-sm text-label-sm">Chief Warden's Office</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Card 6: Administration (D Block) - DEFAULT ACTIVE INSPECTION ITEM -->
+<div class="service-card group cursor-pointer rounded-2xl bg-surface-container-lowest p-space-lg shadow-md ring-2 ring-primary/80 transition-all relative overflow-hidden flex flex-col justify-between" data-authority="Office of the Registrar" data-block="D Block" data-hours="Mon - Fri: 9:00 AM – 4:30 PM (Lunch: 1:00 PM – 2:00 PM)" data-lead-tag="Institutional Registry &amp; Student Certification Central" data-room="D Block • 1st Floor (Room D-104)" data-service-cat="academics" data-service-id="administration" data-title="Administration">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary">Administration</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">D Block (Central Office)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary">Selected</span>
+</div>
+<div class="pl-2 mb-space-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                  Bonafide certificates, official degree transcripts, name correction, student ID replacements, fee receipts.
+                </p>
+</div>
+<div class="pl-2 flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Bonafide</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Transcripts</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Fee Clearance</span>
+</div>
+</div>
+<div class="pl-2 pt-space-sm mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="font-label-sm text-label-sm">Office of the Registrar</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Campus Interactive Architectural Wayfinding Banner -->
+<div class="w-full rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">map</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary">Need physical directional navigation?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Use the interactive campus floorplan navigator with real-time room route highlighting.</p>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-2.5 rounded-lg bg-surface-container-highest hover:bg-surface-container text-primary font-label-lg text-label-lg transition-colors flex items-center gap-2">
+<span>Open Spatial Map</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Persistent Right-Hand Detail Inspection Panel (4 Columns) -->
+<div class="lg:col-span-4 sticky top-28">
+<div class="w-full bg-surface-container-lowest rounded-2xl shadow-lg p-space-lg flex flex-col gap-space-lg transition-all duration-300" id="detail-drawer">
+<!-- Detail Header -->
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm" id="detail-icon-wrap">
+<span class="material-symbols-outlined text-[24px]" id="detail-icon">corporate_fare</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Service Inspection</span>
+<h2 class="font-headline-sm text-headline-sm text-primary" id="detail-title">Central Administration</h2>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="detail-block-tag">D Block</span>
+</div>
+<!-- Authority Banner -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Designated Authority</span>
+<span class="font-title-md text-title-md text-primary" id="detail-authority">Office of the Registrar</span>
+</div>
+</div>
+<!-- Office Location & Hours Specifications -->
+<div class="space-y-space-md">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Office Location</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold" id="detail-location">
+                  D Block • 1st Floor (Room D-104)
+                </p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Adjacent to North Quadrangle Fountain</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Office &amp; Counter Hours</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold" id="detail-hours">
+                  Mon - Fri: 9:00 AM – 4:30 PM
+                </p>
+<p class="font-body-sm text-body-sm text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Lunch recess: 1:00 PM – 2:00 PM (Counters shut)</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Key Self-Service Actions -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Key Self-Service Actions</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Instant Forms</span>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full text-left p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Request Bonafide Certificate</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+<button class="w-full text-left p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">history_edu</span>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Transcript Tracking</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+<button class="w-full text-left p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">receipt_long</span>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Fee Verification</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Map Mini-Preview (Data-Location Spec) -->
+<div class="relative rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<div class="w-full h-28 bg-cover bg-center" data-alt="Architectural isometric 3D blueprint floorplan of university administration hall D Block showing service counter windows and foyer in deep navy and cream minimalist aesthetic" data-location="Administration Building Room D-104" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-space-sm justify-between">
+<span class="text-on-primary font-label-sm text-label-sm">D Block • Floor 1 Overview</span>
+<a class="inline-flex items-center gap-1 text-tertiary-fixed font-label-sm text-label-sm hover:underline" href="#">
+<span>View D Block on Map</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Direct AI Companion CTA Action Area -->
+<div class="pt-2 flex flex-col gap-2">
+<button class="w-full py-3.5 px-space-md rounded-xl bg-gradient-to-r from-tertiary-container to-secondary text-on-primary font-label-lg text-label-lg shadow-md hover:opacity-95 transition-opacity flex items-center justify-center gap-2" id="direct-ai-cta">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span id="ai-cta-label">Ask UniGuide About Administration</span>
+</button>
+<a class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-container text-primary font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span>View Department Portal &amp; Policies</span>
+<span class="material-symbols-outlined text-[16px]">launch</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick FAQ / UniGuide Protocol Guide Section -->
+<div class="mt-space-xl pt-space-lg">
+<div class="mb-space-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Frequently Consulted Workflows</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Immediate University Self-Service Assistance</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:inline">Synced with Academic Council Policy (2025-26)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-1">How fast are Bonafide Certificates issued?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Digital copies are counter-signed and published to the Student Portal within 4 working hours of submission at Desk D-104.
+            </p>
+</div>
+<button class="mt-space-md text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+<span>Query step-by-step</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-1">What is the deadline for Course Add/Drop?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Dean of Academics (A Block) accepts semester elective adjustments through the 14th calendar day of the instructional term.
+            </p>
+</div>
+<button class="mt-space-md text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+<span>View semester dates</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary mb-1">Hostel Curfew &amp; Late Entry Protocol?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Research lab night passes must be counter-signed by project faculty and submitted digitally to Chief Warden by 6:00 PM.
+            </p>
+</div>
+<button class="mt-space-md text-secondary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+<span>Submit late pass</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Behavior -->
+<script>
+    (function initCampusServicesPage() {
+      // Data dictionary for the 6 services
+      const servicesData = {
+        academics: {
+          title: "Academic Affairs",
+          block: "A Block",
+          authority: "Dean of Academics",
+          location: "A Block • 2nd Floor (Suite A-210)",
+          hours: "Mon - Fri: 8:30 AM – 4:00 PM (Advising begins 10:00 AM)",
+          icon: "menu_book",
+          actions: [
+            { label: "Course Registration Portal", icon: "app_registration" },
+            { label: "Credit Transfer Evaluation", icon: "swap_horiz" },
+            { label: "Faculty Advisor Appointment", icon: "calendar_month" }
+          ],
+          aiPrompt: "Ask UniGuide About Academics"
+        },
+        examinations: {
+          title: "Examinations Wing",
+          block: "C Block",
+          authority: "Controller of Examinations",
+          location: "C Block • Ground Floor (Wing C-012)",
+          hours: "Mon - Fri: 9:00 AM – 5:00 PM (Windows close 4:30 PM)",
+          icon: "assignment",
+          actions: [
+            { label: "Hall Ticket Re-issue", icon: "badge" },
+            { label: "Grade Re-evaluation Appeal", icon: "rate_review" },
+            { label: "Official Grade Card Copies", icon: "description" }
+          ],
+          aiPrompt: "Ask UniGuide About Examinations"
+        },
+        placements: {
+          title: "Training & Placement Cell",
+          block: "L Block",
+          authority: "Training & Placement Officer",
+          location: "L Block • 3rd Floor (Corporate Hub L-301)",
+          hours: "Mon - Sat: 9:00 AM – 6:00 PM",
+          icon: "work",
+          actions: [
+            { label: "On-Campus Drive Signups", icon: "domain" },
+            { label: "Mock Interview Slots", icon: "record_voice_over" },
+            { label: "Internship NOC Approval", icon: "verified" }
+          ],
+          aiPrompt: "Ask UniGuide About Placements"
+        },
+        library: {
+          title: "University Central Library",
+          block: "B Block",
+          authority: "Chief Librarian",
+          location: "B Block • Central Atrium (Desk B-001)",
+          hours: "Open 24/7 (Desk Circulation: 8:00 AM – 10:00 PM)",
+          icon: "local_library",
+          actions: [
+            { label: "Reserve Quiet Study Carrel", icon: "chair" },
+            { label: "Access JSTOR / IEEE Xplore", icon: "menu_book" },
+            { label: "Inter-Library Loan Request", icon: "swap_calls" }
+          ],
+          aiPrompt: "Ask UniGuide About Library"
+        },
+        hostel: {
+          title: "Hostel & Housing",
+          block: "Hostel Zone",
+          authority: "Chief Warden's Office",
+          location: "Hostel Administrative Center (Quad H-12)",
+          hours: "Mon - Sun: 7:00 AM – 9:00 PM (Emergency on-call 24/7)",
+          icon: "apartment",
+          actions: [
+            { label: "Submit Maintenance Ticket", icon: "handyman" },
+            { label: "Mess Rebate Application", icon: "restaurant" },
+            { label: "Curfew Extension Pass", icon: "night_shelter" }
+          ],
+          aiPrompt: "Ask UniGuide About Hostel"
+        },
+        administration: {
+          title: "Central Administration",
+          block: "D Block",
+          authority: "Office of the Registrar",
+          location: "D Block • 1st Floor (Room D-104)",
+          hours: "Mon - Fri: 9:00 AM – 4:30 PM (Lunch: 1:00 PM – 2:00 PM)",
+          icon: "corporate_fare",
+          actions: [
+            { label: "Request Bonafide Certificate", icon: "assignment_turned_in" },
+            { label: "Transcript Tracking", icon: "history_edu" },
+            { label: "Fee Verification", icon: "receipt_long" }
+          ],
+          aiPrompt: "Ask UniGuide About Administration"
+        }
+      };
+
+      const searchInput = document.getElementById("department-search");
+      const clearSearchBtn = document.getElementById("clear-search-btn");
+      const filterChips = document.querySelectorAll(".filter-chip");
+      const serviceCards = document.querySelectorAll(".service-card");
+      const visibleCountLabel = document.getElementById("visible-count");
+
+      // Right detail drawer targets
+      const detailTitle = document.getElementById("detail-title");
+      const detailBlockTag = document.getElementById("detail-block-tag");
+      const detailAuthority = document.getElementById("detail-authority");
+      const detailLocation = document.getElementById("detail-location");
+      const detailHours = document.getElementById("detail-hours");
+      const detailIcon = document.getElementById("detail-icon");
+      const aiCtaLabel = document.getElementById("ai-cta-label");
+      const directAiCta = document.getElementById("direct-ai-cta");
+
+      function updateDetailDrawer(serviceKey) {
+        const item = servicesData[serviceKey];
+        if (!item) return;
+
+        detailTitle.textContent = item.title;
+        detailBlockTag.textContent = item.block;
+        detailAuthority.textContent = item.authority;
+        detailLocation.textContent = item.location;
+        detailHours.textContent = item.hours;
+        detailIcon.textContent = item.icon;
+        aiCtaLabel.textContent = item.aiPrompt;
+
+        // Visual highlight for active card
+        serviceCards.forEach(c => {
+          c.classList.remove("ring-2", "ring-primary/80", "shadow-md");
+          c.classList.add("shadow-sm");
+          const tag = c.querySelector(".font-label-sm.text-label-sm.px-2");
+          if (tag && tag.textContent === "Selected") {
+            tag.textContent = "Active";
+            tag.className = "font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant";
+          }
+        });
+
+        const activeCard = document.querySelector(`.service-card[data-service-id="${serviceKey}"]`);
+        if (activeCard) {
+          activeCard.classList.add("ring-2", "ring-primary/80", "shadow-md");
+          activeCard.classList.remove("shadow-sm");
+        }
+      }
+
+      // Add click listeners to cards
+      serviceCards.forEach(card => {
+        card.addEventListener("click", () => {
+          const serviceId = card.getAttribute("data-service-id");
+          updateDetailDrawer(serviceId);
+        });
+      });
+
+      // Filter handling
+      let activeCategory = "all";
+
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visible = 0;
+
+        serviceCards.forEach(card => {
+          const cat = card.getAttribute("data-service-cat");
+          const text = card.textContent.toLowerCase();
+          const matchesCategory = (activeCategory === "all" || cat === activeCategory);
+          const matchesSearch = (!query || text.includes(query));
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = "flex";
+            visible++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        visibleCountLabel.textContent = `${visible} Desks Available`;
+        if (clearSearchBtn) {
+          clearSearchBtn.classList.toggle("hidden", query.length === 0);
+        }
+      }
+
+      filterChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          filterChips.forEach(c => {
+            c.classList.remove("bg-primary-container", "text-on-primary", "shadow-sm");
+            c.classList.add("bg-surface-container-low", "text-on-surface-variant");
+            const dot = c.querySelector("span.bg-tertiary-fixed");
+            if (dot) dot.remove();
+          });
+
+          chip.classList.add("bg-primary-container", "text-on-primary", "shadow-sm");
+          chip.classList.remove("bg-surface-container-low", "text-on-surface-variant");
+
+          const dot = document.createElement("span");
+          dot.className = "w-1.5 h-1.5 rounded-full bg-tertiary-fixed";
+          chip.appendChild(dot);
+
+          activeCategory = chip.getAttribute("data-category");
+          applyFilters();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener("input", applyFilters);
+      }
+
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener("click", () => {
+          searchInput.value = "";
+          applyFilters();
+          searchInput.focus();
+        });
+      }
+
+      // Micro interaction on direct AI CTA
+      if (directAiCta) {
+        directAiCta.addEventListener("click", () => {
+          const currentDesk = detailTitle.textContent;
+          directAiCta.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span><span>Connecting to Desk Concierge...</span>';
+          setTimeout(() => {
+            directAiCta.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Concierge Initialized</span>';
+            setTimeout(() => {
+              directAiCta.innerHTML = `<span class="material-symbols-outlined text-[20px]">smart_toy</span><span>${aiCtaLabel.textContent}</span>`;
+            }, 2000);
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl pt-space-xl pb-space-lg shadow-[0_-1px_12px_rgba(28,37,65,0.03)]"><div class="w-full px-margin-sm lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-lg pb-space-xl"><div class="md:col-span-1"><div class="flex items-center gap-space-sm mb-space-sm"><div class="w-7 h-7 rounded bg-primary-container text-on-primary flex items-center justify-center"><span class="material-symbols-outlined text-[16px]">school</span></div><span class="font-headline-sm text-headline-sm text-primary">UniGuide AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Official Intelligent Collegiate Concierge providing verified university policy guidance, registrar assistance, and campus intelligence.</p><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><span>Collegiate Node Active (Fall 2025)</span></div></div><div><h3 class="font-title-md text-title-md text-primary mb-space-md">Academic Services</h3><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><li class="hover:text-on-surface cursor-pointer transition-colors">Registrar &amp; Course Add/Drop</li><li class="hover:text-on-surface cursor-pointer transition-colors">Bursar &amp; Financial Aid</li><li class="hover:text-on-surface cursor-pointer transition-colors">Undergraduate Advising</li><li class="hover:text-on-surface cursor-pointer transition-colors">Graduate Degree Petitions</li></ul></div><div><h3 class="font-title-md text-title-md text-primary mb-space-md">Student Life &amp; Campus</h3><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><li class="hover:text-on-surface cursor-pointer transition-colors">Interactive Campus Map</li><li class="hover:text-on-surface cursor-pointer transition-colors">Dining &amp; Meal Plan Balances</li><li class="hover:text-on-surface cursor-pointer transition-colors">Housing &amp; Residential Life</li><li class="hover:text-on-surface cursor-pointer transition-colors">Student Health &amp; Counseling</li></ul></div><div><h3 class="font-title-md text-title-md text-primary mb-space-md">Urgent &amp; Emergency</h3><div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30"><div class="flex items-center gap-2 text-error mb-1"><span class="material-symbols-outlined text-[18px]">emergency</span><span class="font-label-lg text-label-lg">Campus Dispatch 24/7</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-2">For immediate life safety or urgent security assistance on university grounds.</p><span class="font-title-md text-title-md text-primary">(555) 019-9111</span></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col sm:flex-row items-center gap-space-sm sm:gap-space-md text-center sm:text-left"><p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 Collegiate University System. All rights reserved.</p><span class="hidden sm:inline text-outline-variant">|</span><p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified_user</span>FERPA Compliant System • Confidential Student Records</p></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" href="#">FERPA &amp; Privacy</a><a class="hover:text-on-surface transition-colors" href="#">Accessibility Standards</a><a class="hover:text-on-surface transition-colors" href="#">Academic Integrity Policy</a></div></div></div></footer></body></html>

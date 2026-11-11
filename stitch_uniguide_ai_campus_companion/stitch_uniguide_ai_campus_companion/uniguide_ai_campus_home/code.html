@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>UniGuide AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6ce", "on-error": "#ffffff", "inverse-on-surface": "#f2f1ee", "outline": "#76767e", "on-surface": "#1a1c1a", "tertiary-container": "#002c28", "inverse-primary": "#bdc5e9", "on-error-container": "#93000a", "surface-container": "#efeeeb", "on-secondary-fixed": "#021d35", "tertiary-fixed": "#89f5e7", "error": "#ba1a1a", "surface": "#faf9f6", "primary-fixed": "#dbe1ff", "on-background": "#1a1c1a", "surface-tint": "#545d7c", "on-primary-fixed-variant": "#3d4664", "secondary-fixed": "#d2e4ff", "background": "#faf9f6", "on-primary-container": "#838cae", "surface-container-highest": "#e3e2e0", "secondary": "#4a607c", "tertiary": "#001512", "inverse-surface": "#2f312f", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#bdc5e9", "surface-dim": "#dbdad7", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#324863", "primary-container": "#1c2541", "on-tertiary-fixed-variant": "#005049", "error-container": "#ffdad6", "surface-variant": "#e3e2e0", "on-secondary-container": "#4c627e", "surface-bright": "#faf9f6", "on-surface-variant": "#45464d", "surface-container-low": "#f4f3f1", "tertiary-fixed-dim": "#6bd8cb", "on-primary-fixed": "#111a36", "surface-container-high": "#e9e8e5", "on-tertiary-fixed": "#00201d", "secondary-fixed-dim": "#b2c8e8", "on-primary": "#ffffff", "secondary-container": "#c8dfff", "on-tertiary-container": "#239e91", "on-secondary": "#ffffff", "primary": "#06102b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "2rem", "gutter": "1.5rem", "margin": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin-lg": "3rem", "space-xl": "2.5rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}] } } } };</script><style>@layer base { html, body { min-height: 100%; margin: 0; padding: 0; background-color: #faf9f6; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen relative antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(28,37,65,0.06)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="UniGuide AI Crest" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCA6N_Wp8Bd0W25LO87tihrx9GatIcG_uwm25N6oQc6yfoeMYnl1BHb-HLicOLu3CKsfa4phgc9HDd6Vfw_oxaCjM-KxTtEglpST3GXwlNRHoW1T3rBcbvYIM1b21n5LgM9vdlSoA1UZeOy_ECYWqNuqA_wkPhl6LZs8Os5B7nGsrIuHWTlgugkb8EESeXb38-3pJUec-Pl3oZZRbDe3JKNUMkPFuYhy9ShouA97ymB"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-title-md text-primary tracking-tight font-bold leading-none">UniGuide AI</span><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-on-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-on-tertiary-container"></span></span></div><span class="font-label-sm text-label-sm text-secondary tracking-wide uppercase">Campus Companion</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-11 h-11 flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOdGK49rwneYZe1NhoxrXDaGNlMx4zIDRxG8jcDeK3UTaWhC-fDxNVWJEUimoRYAdyqNc03K8syEJZdjG_BQyrEAj0ap66LP-c1VUeHgCi9yypdOzHV887ELDHOCkykYSU8PpuT9AF-JASpfRtTAHjYi-GhkR2_nvtjHN7GDLvINY2RxjMUBdUbVDMgwU4sPRQdKAkiA_r2iHatvvJJcNrbD_Y_ALPDVtYAIF-XGc"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full pb-10">
+<!-- Top Greeting & Context Pill -->
+<section class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Good morning, Maya <span class="inline-block hover:rotate-12 transition-transform cursor-pointer">👋</span></h1>
+<p class="font-label-md text-label-md text-secondary mt-0.5 flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+          Semester IV • School of Engineering &amp; Technology
+        </p>
+</div>
+<div class="hidden sm:flex items-center gap-1 px-3 py-1 bg-surface-container rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-primary">Student ID #88412</span>
+</div>
+</div>
+</section>
+<!-- Hero Banner: Modern Collegiate Elegance with Ambient Intelligence -->
+<section class="px-margin mb-space-md">
+<div class="relative overflow-hidden rounded-xl bg-primary-container text-on-primary p-space-lg shadow-xl shadow-primary-container/20">
+<!-- Architectural Contour Ambient Background -->
+<svg class="absolute inset-0 w-full h-full opacity-10 pointer-events-none stroke-current text-primary-fixed" fill="none" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+<circle cx="360" cy="20" r="160" stroke-dasharray="4 4" stroke-width="1.2"></circle>
+<circle cx="360" cy="20" r="120" stroke-width="0.8"></circle>
+<circle cx="360" cy="20" r="80" stroke-dasharray="2 2" stroke-width="0.8"></circle>
+<path d="M-40 220 C80 180, 160 260, 280 200 C340 170, 390 220, 440 190" stroke-width="1.2"></path>
+<path d="M-20 250 C100 210, 180 280, 300 220 C360 190, 410 240, 460 210" stroke-dasharray="3 3" stroke-width="0.75"></path>
+<line stroke-dasharray="4 6" stroke-width="0.5" x1="20" x2="20" y1="0" y2="240"></line>
+<line stroke-dasharray="4 6" stroke-width="0.5" x1="120" x2="120" y1="0" y2="240"></line>
+</svg>
+<!-- Glowing AI Badge -->
+<div class="relative z-10 flex items-center justify-between mb-space-sm">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-tertiary-container/90 shadow-inner">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-80"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-on-tertiary-container"></span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed tracking-wide font-medium">UniGuide Assistant Online</span>
+</div>
+<div class="flex items-center gap-1 text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>v2.4 Live</span>
+</div>
+</div>
+<!-- Main Headline & Copy -->
+<div class="relative z-10 max-w-xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white tracking-tight leading-tight mb-space-xs">
+          Your Campus. Your Questions.<br/>
+<span class="italic font-normal text-secondary-fixed">One Smart Companion.</span>
+</h2>
+<p class="font-body-sm text-body-sm text-surface-container-high leading-relaxed opacity-95">
+          Instant academic answers, administrative services, exam schedules, and smart campus navigation in one place.
+        </p>
+</div>
+<!-- Hero Visual Flourish -->
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center gap-space-md">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-block h-6 w-6 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm font-bold">IT</div>
+<div class="inline-block h-6 w-6 rounded-full bg-tertiary-fixed text-tertiary-container flex items-center justify-center font-label-sm text-label-sm shadow-sm font-bold">RG</div>
+<div class="inline-block h-6 w-6 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm font-bold">EX</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Integrated with 24 campus services</span>
+</div>
+</div>
+</section>
+<!-- Large AI Omnibox / Prompt Bar -->
+<section class="px-margin mb-space-md">
+<div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-md shadow-primary/5 flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs px-space-sm pt-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container animate-pulse">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Campus AI Concierge</span>
+</div>
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-low rounded-lg">
+<div class="pl-2 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+</div>
+<input class="flex-1 bg-transparent border-0 outline-none text-on-surface font-body-sm text-body-sm placeholder:text-outline text-ellipsis" id="aiQueryInput" placeholder="Ask anything about fees, exams, hostel, D-Block..." type="text"/>
+<button aria-label="Voice Query" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-tertiary-container hover:bg-secondary-container/40 transition-colors" id="micBtn">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" id="askAiBtn">
+<span>Ask AI</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Query Suggestions (Horizontal Scroll) -->
+<section class="mb-space-lg">
+<div class="px-margin mb-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Suggested Inquiries</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container cursor-pointer font-semibold flex items-center">Refresh <span class="material-symbols-outlined text-[14px] ml-0.5">cached</span></span>
+</div>
+<div class="flex overflow-x-auto gap-space-sm px-margin pb-1 scrollbar-none no-scrollbar">
+<!-- Chip 1 -->
+<button class="flex-shrink-0 flex items-center gap-2 px-space-sm py-2 rounded-full bg-surface-container-lowest text-primary shadow-sm hover:bg-secondary-container/40 transition-all text-left" onclick="fillQuery('Where is the administrative office?')">
+<span class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+</span>
+<span class="font-label-md text-label-md whitespace-nowrap">Where is the administrative office?</span>
+</button>
+<!-- Chip 2 -->
+<button class="flex-shrink-0 flex items-center gap-2 px-space-sm py-2 rounded-full bg-surface-container-lowest text-primary shadow-sm hover:bg-secondary-container/40 transition-all text-left" onclick="fillQuery('How can I get placement information?')">
+<span class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[14px]">work</span>
+</span>
+<span class="font-label-md text-label-md whitespace-nowrap">How can I get placement information?</span>
+</button>
+<!-- Chip 3 -->
+<button class="flex-shrink-0 flex items-center gap-2 px-space-sm py-2 rounded-full bg-surface-container-lowest text-primary shadow-sm hover:bg-secondary-container/40 transition-all text-left" onclick="fillQuery('Where can I submit a hostel complaint?')">
+<span class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[14px]">domain_add</span>
+</span>
+<span class="font-label-md text-label-md whitespace-nowrap">Where can I submit a hostel complaint?</span>
+</button>
+<!-- Chip 4 -->
+<button class="flex-shrink-0 flex items-center gap-2 px-space-sm py-2 rounded-full bg-surface-container-lowest text-primary shadow-sm hover:bg-secondary-container/40 transition-all text-left" onclick="fillQuery('Where can I find examination notifications?')">
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+</span>
+<span class="font-label-md text-label-md whitespace-nowrap">Where can I find examination notifications?</span>
+</button>
+</div>
+</section>
+<!-- Interactive Smart Campus Navigation Preview Banner -->
+<section class="px-margin mb-space-lg">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-md shadow-primary/5 p-space-md">
+<div class="flex items-start gap-space-md">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container shadow-inner">
+<div class="w-full h-full bg-cover bg-center" data-location="D Block, North Quad, University Campus" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[0.5px] flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[24px] drop-shadow">navigation</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-semibold tracking-wide">Live Route Guide</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">350m away</span>
+</div>
+<p class="font-title-md text-title-md text-primary font-bold leading-tight truncate">
+            Need to visit Administrative Office?
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">
+            Located at D Block (North Quad). Ground Floor, Wing B.
+          </p>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-secondary">Office open until 5:00 PM</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:text-on-tertiary-container transition-colors">
+<span>Live Route Map</span>
+<span class="material-symbols-outlined text-[16px]">near_me</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Campus Services 8-Category Grid -->
+<section class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Campus Services</h3>
+<p class="font-body-sm text-body-sm text-secondary">Self-service portals and immediate departmental resolution</p>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-bold px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container transition-colors">
+        View All (18)
+      </button>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 1. Academics -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold">Sem IV</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Academics</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Grading, syllabus, &amp; course add/drop approval</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Active Syllabus</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 2. Attendance -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">rule</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-bold">84.2%</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Attendance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Duty leaves &amp; minimum 75% tracking radar</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Log Duty Leave</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 3. Examinations -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">assignment</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">New Hall Ticket</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Examinations</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Hall tickets, re-evaluation, &amp; exam timetables</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Download Slip</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 4. Placements -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold">12 Drives</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Placements</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">CDC recruitment drives, summer internships, resumes</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Apply Portal</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 5. Library -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">local_library</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">2 Borrowed</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Library</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Digital repository, book renewals, &amp; study pod reservations</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Book Pods</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 6. Hostel -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">apartment</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Block B #304</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Hostel</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Maintenance tickets, room swap, &amp; weekly mess menu</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Mess Menu</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 7. Administration -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold">Clear</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Administration</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Fee receipts, bonafide certificates, registrar queue</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Get Bonafide</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+<!-- 8. Events & Life -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed-dim flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-bold">This Fri</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">Events</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Campus fests, symposiums, &amp; club recruitment</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span>Hackathon '25</span>
+<span class="material-symbols-outlined text-[14px] ml-1">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Campus Life Snapshot Visual Carousel (Rich Imagery) -->
+<section class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Campus Highlights</h3>
+<span class="font-label-sm text-label-sm text-secondary">Engineering Quad</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="relative rounded-xl overflow-hidden shadow-sm h-36">
+<img class="w-full h-full object-cover" data-alt="Sunlit university engineering quadrangle with students collaborating on benches outside neoclassical brick and glass architecture with warm collegiate sunlight and serene green lawn." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkBAjHocICD6QbIKRSw1AOdJrMGfdmH8O7BIsNEtyVJibtVlTjRwbN8XaWRbo0BhEkHELAEfhN-t1G3WgFgSRDWSiMaiJTSPEnqY_8OI2ja9ULNNgYcm7CodEjVy_Z4yU95Lf9VE8ht5SnAfK8J7UvA0bK-1G6KtVAOMo0n9AlhGe5xkV6yIsItR2WOYTFxcVRBbXvplgB0sYchsvy7bWLjE1cZUkX-IX84euf2fY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex flex-col justify-end p-space-sm text-white">
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold">Academic Core</span>
+<h5 class="font-title-md text-title-md font-bold text-white">Main Library Quiet Wing</h5>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm h-36">
+<img class="w-full h-full object-cover" data-alt="Modern high-tech university robotics and engineering innovation lab with clean lighting collegiate navy banners and students working on autonomous systems." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgjMeNQ29F0WLJWLSHRnhyLfJnAFfqh8DdXbXngBK_OReknoVkX68Tu0YuPxhV2vCsJAlAslr9Zi_OH_P96Z3KvN-B1s7xfY-YVDblVrPPyo-UGHx3Ym3gvRVg8Hs1GsL8s9iUuIe61OO8Snz6IuqOynuERYv2OWFMFWKTXW7fkg5yer3nskQfN09BDJdjOH7gNZLWmYz_gj8e6tXbTpMrbHjtqz2bhRyncP9dl8s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex flex-col justify-end p-space-sm text-white">
+<span class="font-label-sm text-label-sm text-secondary-fixed font-bold">Innovation Center</span>
+<h5 class="font-title-md text-title-md font-bold text-white">Hackathon Showcase Hall</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Recently Asked / Trending Inquiries -->
+<section class="px-margin mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">trending_up</span>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Trending Campus Inquiries</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Real-time answers</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Inquiry 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">event_note</span>
+</span>
+<h5 class="font-title-md text-title-md text-primary font-bold">End-semester practical timetable release date</h5>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">2m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-8">
+          The Central Exam Cell confirmed that lab schedules will be published on March 28th via student portal.
+        </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between pl-8">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified_user</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Answered by Exam Cell Officer</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center">
+            Read Memo <span class="material-symbols-outlined text-[14px] ml-0.5">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Inquiry 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">night_shelter</span>
+</span>
+<h5 class="font-title-md text-title-md text-primary font-bold">Hostel curfew extension form protocol</h5>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">1h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-8">
+          Submit Annexure 4-B via the UniGuide digital forms desk at least 24 hours prior with mentor approval.
+        </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between pl-8">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified_user</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Answered by Dean Office</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center">
+            Open Form <span class="material-symbols-outlined text-[14px] ml-0.5">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive AI Query Handler Script -->
+<script>
+    function fillQuery(text) {
+      const input = document.getElementById('aiQueryInput');
+      if (input) {
+        input.value = text;
+        input.focus();
+      }
+    }
+
+    document.getElementById('askAiBtn')?.addEventListener('click', () => {
+      const input = document.getElementById('aiQueryInput');
+      if (input && input.value.trim() !== '') {
+        const query = encodeURIComponent(input.value.trim());
+        const chatLink = document.querySelector('a[data-path="ai-concierge"]');
+        if (chatLink) {
+          chatLink.click();
+        }
+      }
+    });
+
+    document.getElementById('aiQueryInput')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        document.getElementById('askAiBtn')?.click();
+      }
+    });
+
+    document.getElementById('micBtn')?.addEventListener('click', () => {
+      const btn = document.getElementById('micBtn');
+      btn.classList.toggle('text-error');
+      const input = document.getElementById('aiQueryInput');
+      if (input) {
+        input.placeholder = "Listening... 'Where is the Dean office?'";
+      }
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(28,37,65,0.05)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors text-primary font-bold" data-path="campus-home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors relative" data-path="ai-concierge" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">chat_bubble</span><span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span></div><span class="font-label-sm text-label-sm mt-0.5">AI Chat</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="campus-map" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Campus Map</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant transition-colors" data-path="academic-directory" href="#"><span class="material-symbols-outlined text-[24px]">domain</span><span class="font-label-sm text-label-sm mt-0.5">Directory</span></a></div></nav></body></html>

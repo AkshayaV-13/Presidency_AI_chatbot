@@ -1,0 +1,202 @@
+{
+  "campus_name": "UniGuide Demonstration Campus",
+  "disclaimer": "Illustrative Demo Campus Map — Fictional university layout for demonstration purposes, not an official GIS survey.",
+  "main_entrance": {
+    "name": "Main Entrance (South Gate)",
+    "coordinates": {"x": 500, "y": 660}
+  },
+  "locations": [
+    {
+      "id": "a-block",
+      "code": "A",
+      "name": "A Block",
+      "title": "Academic Office & Faculty Advisors",
+      "department": "Academics",
+      "category": "Academic Affairs",
+      "badge_color": "secondary-fixed",
+      "room": "Room A-102",
+      "level": "Ground & 1st Floor",
+      "services": [
+        "Faculty Advising",
+        "Academic Mentorship",
+        "Curriculum Inquiries",
+        "Course Guidance"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Walk straight past Central Fountain → Turn left into West Concourse → A Block is on your right.",
+        "distance": "210 meters",
+        "estimated_time": "Approx. 3 mins walk",
+        "accessibility": "Step-free • Elevator equipped",
+        "path_coords": "M 500 660 L 500 457 L 290 457 L 290 355",
+        "target_point": {"x": 290, "y": 355}
+      },
+      "map_svg": {
+        "x": 130,
+        "y": 300,
+        "width": 160,
+        "height": 110,
+        "label": "A Block"
+      }
+    },
+    {
+      "id": "b-block",
+      "code": "B",
+      "name": "B Block",
+      "title": "University Central Library",
+      "department": "Library",
+      "category": "Facilities",
+      "badge_color": "amber-200",
+      "room": "Central Reading Hall & Vault",
+      "level": "3 Floors (East-West Wings)",
+      "services": [
+        "Library Resources Access",
+        "Study Carrels",
+        "Digital Research Archive",
+        "Book Circulation Desk"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Walk straight past Central Fountain → Continue north along Main Avenue → Turn left into North Promenade → B Block is ahead on the left.",
+        "distance": "350 meters",
+        "estimated_time": "Approx. 5 mins walk",
+        "accessibility": "Step-free ramp at West entrance",
+        "path_coords": "M 500 660 L 500 240 L 215 240 L 215 200",
+        "target_point": {"x": 215, "y": 200}
+      },
+      "map_svg": {
+        "x": 130,
+        "y": 90,
+        "width": 170,
+        "height": 110,
+        "label": "B Block"
+      }
+    },
+    {
+      "id": "c-block",
+      "code": "C",
+      "name": "C Block",
+      "title": "Examination Office",
+      "department": "Examinations",
+      "category": "Academic Affairs",
+      "badge_color": "blue-200",
+      "room": "Room C-101 (Controller Desk)",
+      "level": "Ground Floor",
+      "services": [
+        "Timetables & Notifications",
+        "Examination Channels",
+        "Evaluation Verification",
+        "Hall Booking & Verification"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Take immediate left pathway before Central Fountain → C Block is directly ahead.",
+        "distance": "160 meters",
+        "estimated_time": "Approx. 2 mins walk",
+        "accessibility": "Step-free paved path",
+        "path_coords": "M 500 660 L 500 520 L 290 520",
+        "target_point": {"x": 290, "y": 520}
+      },
+      "map_svg": {
+        "x": 130,
+        "y": 470,
+        "width": 160,
+        "height": 110,
+        "label": "C Block"
+      }
+    },
+    {
+      "id": "d-block",
+      "code": "D",
+      "name": "D Block",
+      "title": "Administrative Office",
+      "department": "Administration",
+      "category": "Core Administration",
+      "badge_color": "primary-container",
+      "room": "Room D-104 (Registrar Counter)",
+      "level": "1st Floor (East Wing)",
+      "services": [
+        "Bonafide Certificates",
+        "Student Records & Transcripts",
+        "Official Attestations",
+        "Administrative Verification"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Walk straight past Central Fountain → Turn right into East Concourse → D Block is on your right.",
+        "distance": "280 meters",
+        "estimated_time": "Approx. 4 mins walk",
+        "accessibility": "Step-free • Elevator to 1st Floor",
+        "path_coords": "M 500 660 L 500 457 L 664 457 L 664 375",
+        "target_point": {"x": 664, "y": 375}
+      },
+      "map_svg": {
+        "x": 670,
+        "y": 300,
+        "width": 200,
+        "height": 140,
+        "label": "D Block"
+      }
+    },
+    {
+      "id": "l-block",
+      "code": "L",
+      "name": "L Block",
+      "title": "Placement Office",
+      "department": "Placements",
+      "category": "Career",
+      "badge_color": "emerald-200",
+      "room": "Room L-201 (Corporate Relations Center)",
+      "level": "2nd Floor",
+      "services": [
+        "Placement Training",
+        "Placement-Related Information",
+        "Campus Recruitment Drives",
+        "Interview Preparation Desks"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Walk north past Central Plaza → Turn right onto North Concourse → L Block is ahead on the right.",
+        "distance": "370 meters",
+        "estimated_time": "Approx. 5 mins walk",
+        "accessibility": "Step-free corridor & lift access",
+        "path_coords": "M 500 660 L 500 240 L 785 240 L 785 200",
+        "target_point": {"x": 785, "y": 200}
+      },
+      "map_svg": {
+        "x": 700,
+        "y": 90,
+        "width": 170,
+        "height": 110,
+        "label": "L Block"
+      }
+    },
+    {
+      "id": "hostel-zone",
+      "code": "H",
+      "name": "Hostel Zone",
+      "title": "Hostel Administration",
+      "department": "Hostel",
+      "category": "Student Life",
+      "badge_color": "purple-200",
+      "room": "Central Warden Office (Block H-1)",
+      "level": "Ground Floor",
+      "services": [
+        "Hostel-Related Complaints",
+        "Warden Inquiries",
+        "Residential Maintenance",
+        "Room Allotment Affairs"
+      ],
+      "route": {
+        "summary": "From Main Entrance (South Gate) → Walk past Central Fountain → Turn right towards East Residential Promenade → Hostel Zone is straight ahead.",
+        "distance": "240 meters",
+        "estimated_time": "Approx. 3 mins walk",
+        "accessibility": "Step-free paved pathway",
+        "path_coords": "M 500 660 L 500 520 L 730 520",
+        "target_point": {"x": 730, "y": 520}
+      },
+      "map_svg": {
+        "x": 730,
+        "y": 470,
+        "width": 180,
+        "height": 120,
+        "label": "Hostel Zone"
+      }
+    }
+  ]
+}
